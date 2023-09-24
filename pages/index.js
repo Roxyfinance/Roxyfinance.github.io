@@ -80,13 +80,20 @@ export default function Home() {
         </div>
 
         <div className={styles.stakeContainer}>
-          <input
-            className={styles.textbox}
-            type="number"
-            value={amountToStake}
-            onChange={(e) => setAmountToStake(e.target.value)}
-          />
+          <img className={styles.bground} src="/bgg.png" width={200} />
+        </div>
 
+        <div className={styles.grid}>
+          <a className={styles.card}>
+            <h2>Zgc Balance:</h2>
+            <p>{stakingTokenBalance?.displayValue}</p>
+            <input
+              className={styles.textbox}
+              type="number"
+              value={amountToStake}
+              onChange={(e) => setAmountToStake(e.target.value)}
+            />
+          </a>
           <Web3Button
             className={styles.button}
             contractAddress={stakingContractAddress}
@@ -103,12 +110,25 @@ export default function Home() {
           >
             Stake
           </Web3Button>
-          <input
-            className={styles.textbox}
-            type="number"
-            value={amountToStake}
-            onChange={(e) => setAmountToStake(e.target.value)}
-          />
+
+          <a className={styles.card}>
+            <h2>Idrt Balance:</h2>
+            <p>{rewardTokenBalance?.displayValue}</p>
+          </a>
+          <Web3Button>Swap</Web3Button>
+
+          <a className={styles.card}>
+            <h2>Current staked</h2>
+            <p>
+              {stakeInfo && ethers.utils.formatEther(stakeInfo[0].toString())}
+            </p>
+            <input
+              className={styles.textbox}
+              type="number"
+              value={amountToStake}
+              onChange={(e) => setAmountToStake(e.target.value)}
+            />
+          </a>
           <Web3Button
             className={styles.button}
             contractAddress={stakingContractAddress}
@@ -122,29 +142,8 @@ export default function Home() {
             Unstake
           </Web3Button>
 
-          <img className={styles.bground} src="/bgg.png" width={360} />
-        </div>
-
-        <div className={styles.grid}>
           <a className={styles.card}>
-            <h2>ZGC token balance</h2>
-            <p>{stakingTokenBalance?.displayValue}</p>
-          </a>
-
-          <a className={styles.card}>
-            <h2>IDRT token balance</h2>
-            <p>{rewardTokenBalance?.displayValue}</p>
-          </a>
-
-          <a className={styles.card}>
-            <h2>Current staked</h2>
-            <p>
-              {stakeInfo && ethers.utils.formatEther(stakeInfo[0].toString())}
-            </p>
-          </a>
-
-          <a className={styles.card}>
-            <h2>Current reward</h2>
+            <h2>Current reward tokens</h2>
             <p>
               {stakeInfo && ethers.utils.formatEther(stakeInfo[1].toString())}
             </p>
@@ -160,6 +159,13 @@ export default function Home() {
             Claim rewards
           </Web3Button>
         </div>
+        <button className={styles.buy}>
+          <img className={styles.bground2} src="/bgg.png" width={160} />
+          <a href="https://polycat.finance/swap?inputCurrency=0xc2132D05D31c914a87C6611C10748AEb04B58e8F&outputCurrency=0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5">
+            Buy Zgc
+          </a>
+          <img src="/zgc.png" width={70} />
+        </button>
       </main>
     </div>
   );
