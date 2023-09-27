@@ -66,7 +66,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <img src="/zgc.png" width={350} className={styles.down} />
+        <img src="/zgc.png" width={300} className={styles.down} />
         <h2 className={styles.description}>
           Stake Zerogic <span className={styles.span}> Earn Idrt!</span>
         </h2>
@@ -79,9 +79,7 @@ export default function Home() {
           <ConnectWallet />
         </div>
 
-        <div className={styles.stakeContainer}>
-          <img className={styles.bground} src="/bgg.png" width={200} />
-        </div>
+        <div className={styles.stakeContainer}></div>
 
         <div className={styles.grid}>
           <a className={styles.card}>
@@ -112,10 +110,9 @@ export default function Home() {
           </Web3Button>
 
           <a className={styles.card}>
-            <h2>Idrt Balance:</h2>
+            <h2>Idrc Balance:</h2>
             <p>{rewardTokenBalance?.displayValue}</p>
           </a>
-          <Web3Button>Swap</Web3Button>
 
           <a className={styles.card}>
             <h2>Current staked</h2>
@@ -143,7 +140,7 @@ export default function Home() {
           </Web3Button>
 
           <a className={styles.card}>
-            <h2>Current reward tokens</h2>
+            <h2>Reward Idrc</h2>
             <p>
               {stakeInfo && ethers.utils.formatEther(stakeInfo[1].toString())}
             </p>
@@ -158,9 +155,10 @@ export default function Home() {
           >
             Claim rewards
           </Web3Button>
+          <img className={styles.bground} src="/bgg.png" width={100} />
         </div>
         <button className={styles.buy}>
-          <img className={styles.bground2} src="/bgg.png" width={160} />
+          <img className={styles.bground2} src="/bgg.png" width={100} />
           <a href="https://polycat.finance/swap?inputCurrency=0xc2132D05D31c914a87C6611C10748AEb04B58e8F&outputCurrency=0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5">
             Buy Zgc
           </a>

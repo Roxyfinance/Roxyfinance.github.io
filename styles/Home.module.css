@@ -111,8 +111,9 @@
 }
 .connect {
   margin-top: 30px;
-  margin-bottom: -60px;
+  margin-bottom: -90px;
   width: 230px;
+  margin-left: 50px;
 }
 .balance {
   display: flex;
