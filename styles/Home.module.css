@@ -7,7 +7,7 @@
 }
 
 .main {
-  min-height: 100vh;
+  min-height: 150vh;
   padding: 4rem 0;
   flex: 1;
   display: flex;
@@ -15,7 +15,24 @@
   justify-content: center;
   align-items: center;
 }
-
+.dr {
+  margin-bottom: -230px;
+  animation: bull 2s infinite alternate-reverse ease-in-out;
+  margin-left: 30px;
+}
+.lingkaran {
+  animation: ling 20s linear infinite;
+  margin-top: 30px;
+  margin-bottom: -10px;
+}
+@keyframes ling {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
 .stakeContainer {
   display: flex;
   margin-bottom: 2rem;
@@ -33,13 +50,16 @@
 }
 .judul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-top: 80px;
 }
+.judul p {
+  margin: 0 5px;
+}
 .down {
   animation: bull 2s infinite alternate-reverse ease-in-out;
-  margin-top: -10px;
+  margin-top: 50px;
 }
 @keyframes bull {
   0% {
@@ -65,6 +85,9 @@
 .button {
   border: red 1px solid;
   width: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border: 1px dashed grey;
 }
 .bground2 {
   z-index: -999;
@@ -96,6 +119,7 @@
 .title,
 .description {
   text-align: center;
+  text-shadow: 3px 2px 1px grey;
 }
 .buy {
   display: flex;
@@ -103,20 +127,38 @@
   margin-top: 100px;
   padding: 8px;
   border-radius: 20px;
-  background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   border: 1px solid red;
   text-decoration: none;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border: 1px dashed grey;
+  background: linear-gradient(
+    rgba(163, 0, 0, 0.574),
+    rgba(114, 1, 1, 0.623),
+    rgba(39, 0, 0, 0.45)
+  );
 }
 .buy a {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
   text-decoration: none;
-  color: #7a7a7a;
+  color: #eeecec;
+}
+.buy:hover {
+  background: linear-gradient(
+    rgba(255, 0, 0, 0.488),
+    rgba(0, 0, 255, 0.388),
+    rgba(255, 0, 0, 0.48),
+    rgba(255, 166, 0, 0.509)
+  );
 }
 .connect {
   margin-top: 30px;
   margin-bottom: -90px;
   width: 230px;
-  margin-left: 30px;
+  margin-left: 50px;
 }
 .balance {
   display: flex;
@@ -129,14 +171,16 @@
   color: red;
 }
 .paragraf {
-  margin-top: -30px;
+  margin-top: 10px;
+  margin-bottom: 200px;
 }
 .rew {
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
-  padding: -10px;
+  padding: 8px;
 }
 .code {
   background: #fafafa;
@@ -156,7 +200,11 @@
 }
 
 .card {
-  background-color: #1b2129;
+  background: linear-gradient(
+    rgba(163, 0, 0, 0.574),
+    rgba(114, 1, 1, 0.623),
+    rgba(39, 0, 0, 0.45)
+  );
   padding: 2rem;
   margin-top: 30px;
   color: inherit;
@@ -168,6 +216,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border: 1px dashed grey;
 }
 
 .card:hover,
@@ -183,6 +234,7 @@
   border: 1px solid rgb(114, 114, 114);
   padding: 13px;
   border-radius: 30px;
+  text-shadow: 1px 1px 1px grey;
 }
 
 .card p {

@@ -79,7 +79,7 @@ export default function Home() {
           Earn passive income with zerogic staking{" "}
           <span className={styles.span}> and earn rupiah-c tokens!</span>
         </p>
-
+        <img src="/dr.png" width={600} className={styles.dr} />
         <div className={styles.stakeContainer}></div>
         <div className={styles.grid}>
           <a className={styles.card}>
@@ -110,7 +110,7 @@ export default function Home() {
               Stake
             </Web3Button>
             <div className={styles.judul}>
-              <p>Current staked</p>
+              <p>Current staked:</p>
               <p>
                 {stakeInfo && ethers.utils.formatEther(stakeInfo[0].toString())}
               </p>
@@ -157,15 +157,14 @@ export default function Home() {
               <p>{rewardTokenBalance?.displayValue}</p>
             </div>
           </a>
-
-          <img className={styles.bground} src="/bgg.png" width={100} />
+          <img src="/ling.png" width={200} className={styles.lingkaran} />
         </div>
         <button className={styles.buy}>
-          <a href="https://polycat.finance/swap?inputCurrency=0xc2132D05D31c914a87C6611C10748AEb04B58e8F&outputCurrency=0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5">
+          <a href="https://polycat.finance/swap?inputCurrency=Matic&outputCurrency=0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5">
             Buy Zgc |
           </a>
-          <a href="https://polycat.finance/swap?inputCurrency=0xc2132D05D31c914a87C6611C10748AEb04B58e8F&outputCurrency=0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5">
-            | Swap
+          <a href="https://polycat.finance/swap?inputCurrency=0xc92e083E08dF4ebaBEC552e56928EE8FdC4961A5&outputCurrency=0x554cd6bdD03214b10AafA3e0D4D42De0C5D2937b">
+            | Swap idrc
           </a>
         </button>
       </main>
