@@ -27,13 +27,19 @@
 
 .textbox {
   padding: 15px;
-  border: red 3px solid;
+  margin-bottom: 10px;
   border-radius: 8%;
   width: 150px;
 }
+.judul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 80px;
+}
 .down {
   animation: bull 2s infinite alternate-reverse ease-in-out;
-  margin-top: -100px;
+  margin-top: -10px;
 }
 @keyframes bull {
   0% {
@@ -57,9 +63,8 @@
   }
 }
 .button {
-  padding: 500px;
-  margin-left: 10px;
   border: red 1px solid;
+  width: 10px;
 }
 .bground2 {
   z-index: -999;
@@ -97,23 +102,21 @@
   align-items: center;
   margin-top: 100px;
   padding: 8px;
-  width: 150px;
   border-radius: 20px;
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
-  border: 2px solid red;
+  border: 1px solid red;
   text-decoration: none;
 }
 .buy a {
   text-decoration: none;
-  margin-left: 10px;
-  color: #eaeaea;
+  color: #7a7a7a;
 }
 .connect {
   margin-top: 30px;
   margin-bottom: -90px;
   width: 230px;
-  margin-left: 50px;
+  margin-left: 30px;
 }
 .balance {
   display: flex;
@@ -127,6 +130,13 @@
 }
 .paragraf {
   margin-top: -30px;
+}
+.rew {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  padding: -10px;
 }
 .code {
   background: #fafafa;
@@ -147,14 +157,17 @@
 
 .card {
   background-color: #1b2129;
-  margin: 1rem;
-  padding: 1rem;
+  padding: 2rem;
+  margin-top: 30px;
   color: inherit;
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 350px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card:hover,
@@ -165,8 +178,11 @@
   border-color: #e90e0e;
 }
 
-.card h2 {
-  font-size: 1.5rem;
+.card h5 {
+  margin-top: -10px;
+  border: 1px solid rgb(114, 114, 114);
+  padding: 13px;
+  border-radius: 30px;
 }
 
 .card p {

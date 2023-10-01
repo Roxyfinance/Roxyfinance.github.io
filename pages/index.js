@@ -7,6 +7,7 @@ import {
   useTokenBalance,
   Web3Button,
 } from "@thirdweb-dev/react";
+
 import img from "next/image";
 
 import { ethers } from "ethers";
@@ -18,6 +19,7 @@ import { stakingContractAddress } from "../const/yourDetails";
 export default function Home() {
   const address = useAddress();
   const [amountToStake, setAmountToStake] = useState(0);
+  const [amountToWithdraw, setAmountToWithdraw] = useState(0);
 
   // Initialize all the contracts
   const { contract: staking, isLoading: isStakingLoading } = useContract(
@@ -65,104 +67,106 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.connect}>
+        <ConnectWallet />
+      </div>
       <main className={styles.main}>
         <img src="/zgc.png" width={300} className={styles.down} />
         <h2 className={styles.description}>
-          Stake Zerogic <span className={styles.span}> Earn Idrt!</span>
+          Stake Zerogic <span className={styles.span}> Earn Idrc!</span>
         </h2>
         <p className={styles.paragraf}>
-          Earn passive income through zerogic staking{" "}
-          <span className={styles.span}> and earn rupiah tokens!</span>
+          Earn passive income with zerogic staking{" "}
+          <span className={styles.span}> and earn rupiah-c tokens!</span>
         </p>
 
-        <div className={styles.connect}>
-          <ConnectWallet />
-        </div>
-
         <div className={styles.stakeContainer}></div>
-
         <div className={styles.grid}>
           <a className={styles.card}>
-            <h2>Zgc Balance:</h2>
-            <p>{stakingTokenBalance?.displayValue}</p>
+            <div className={styles.judul}>
+              <p>Zgc Balance:</p>
+              <p>{stakingTokenBalance?.displayValue}</p>
+            </div>
             <input
               className={styles.textbox}
               type="number"
               value={amountToStake}
               onChange={(e) => setAmountToStake(e.target.value)}
             />
-          </a>
-          <Web3Button
-            className={styles.button}
-            contractAddress={stakingContractAddress}
-            action={async (contract) => {
-              await stakingToken.setAllowance(
-                stakingContractAddress,
-                amountToStake
-              );
-              await contract.call("stake", [
-                ethers.utils.parseEther(amountToStake),
-              ]);
-              alert("Tokens staked successfully!");
-            }}
-          >
-            Stake
-          </Web3Button>
-
-          <a className={styles.card}>
-            <h2>Idrc Balance:</h2>
-            <p>{rewardTokenBalance?.displayValue}</p>
-          </a>
-
-          <a className={styles.card}>
-            <h2>Current staked</h2>
-            <p>
-              {stakeInfo && ethers.utils.formatEther(stakeInfo[0].toString())}
-            </p>
+            <Web3Button
+              className={styles.button}
+              contractAddress={stakingContractAddress}
+              action={async (contract) => {
+                await stakingToken.setAllowance(
+                  stakingContractAddress,
+                  amountToStake
+                );
+                await contract.call("stake", [
+                  ethers.utils.parseEther(amountToStake),
+                ]);
+                alert("Tokens staked successfully!");
+              }}
+            >
+              Stake
+            </Web3Button>
+            <div className={styles.judul}>
+              <p>Current staked</p>
+              <p>
+                {stakeInfo && ethers.utils.formatEther(stakeInfo[0].toString())}
+              </p>
+            </div>
             <input
               className={styles.textbox}
               type="number"
-              value={amountToStake}
-              onChange={(e) => setAmountToStake(e.target.value)}
+              value={amountToWithdraw}
+              onChange={(e) => setAmountToWithdraw(e.target.value)}
             />
+            <Web3Button
+              className={styles.button}
+              contractAddress={stakingContractAddress}
+              action={async (contract) => {
+                await contract.call("withdraw", [
+                  ethers.utils.parseEther(amountToStake),
+                ]);
+                alert("Tokens unstaked successfully!");
+              }}
+            >
+              Unstake
+            </Web3Button>
           </a>
-          <Web3Button
-            className={styles.button}
-            contractAddress={stakingContractAddress}
-            action={async (contract) => {
-              await contract.call("withdraw", [
-                ethers.utils.parseEther(amountToStake),
-              ]);
-              alert("Tokens unstaked successfully!");
-            }}
-          >
-            Unstake
-          </Web3Button>
 
           <a className={styles.card}>
-            <h2>Reward Idrc</h2>
-            <p>
-              {stakeInfo && ethers.utils.formatEther(stakeInfo[1].toString())}
-            </p>
+            <div className={styles.rew}>
+              <p>Reward Idrc</p>
+              <h5>
+                {stakeInfo && ethers.utils.formatEther(stakeInfo[1].toString())}
+              </h5>
+            </div>
+            <Web3Button
+              className={styles.button}
+              contractAddress={stakingContractAddress}
+              action={async (contract) => {
+                await contract.call("claimRewards", []);
+                alert("Rewards claimed successfully!");
+              }}
+            >
+              Harvest
+            </Web3Button>
+            <div className={styles.rew}>
+              <p>Idrc Balance:</p>
+              <p>{rewardTokenBalance?.displayValue}</p>
+            </div>
           </a>
-          <Web3Button
-            className={styles.button}
-            contractAddress={stakingContractAddress}
-            action={async (contract) => {
-              await contract.call("claimRewards", []);
-              alert("Rewards claimed successfully!");
-            }}
-          >
-            Claim rewards
-          </Web3Button>
+
           <img className={styles.bground} src="/bgg.png" width={100} />
         </div>
         <button className={styles.buy}>
-          <img className={styles.bground2} src="/bgg.png" width={100} />
           <a href="https://polycat.finance/swap?inputCurrency=0xc2132D05D31c914a87C6611C10748AEb04B58e8F&outputCurrency=0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5">
-            Buy Zgc
+            Buy Zgc |
           </a>
-          <img src="/zgc.png" width={70} />
+          <a href="https://polycat.finance/swap?inputCurrency=0xc2132D05D31c914a87C6611C10748AEb04B58e8F&outputCurrency=0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5">
+            | Swap
+          </a>
         </button>
       </main>
     </div>
