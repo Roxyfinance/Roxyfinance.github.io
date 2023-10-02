@@ -126,7 +126,7 @@ export default function Home() {
               contractAddress={stakingContractAddress}
               action={async (contract) => {
                 await contract.call("withdraw", [
-                  ethers.utils.parseEther(amountToStake),
+                  ethers.utils.parseEther(amountToWithdraw),
                 ]);
                 alert("Tokens unstaked successfully!");
               }}
@@ -138,9 +138,9 @@ export default function Home() {
           <a className={styles.card}>
             <div className={styles.rew}>
               <p>Reward Idrc</p>
-              <h5>
+              <h4>
                 {stakeInfo && ethers.utils.formatEther(stakeInfo[1].toString())}
-              </h5>
+              </h4>
             </div>
             <Web3Button
               className={styles.button}
@@ -157,7 +157,7 @@ export default function Home() {
               <p>{rewardTokenBalance?.displayValue}</p>
             </div>
           </a>
-          <img src="/ling.png" width={200} className={styles.lingkaran} />
+          <img src="./ling.png" width={200} className={styles.lingkaran} />
         </div>
         <button className={styles.buy}>
           <a href="https://polycat.finance/swap?inputCurrency=Matic&outputCurrency=0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5">
