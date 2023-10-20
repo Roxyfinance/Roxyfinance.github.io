@@ -19,7 +19,7 @@ import { Image } from "@chakra-ui/react";
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
-import { stakingContractAddress } from "../const/yourDetails";
+import { stakingContractAddressLp } from "../const/Lpcontract";
 import {
   Accordion,
   AccordionItem,
@@ -28,14 +28,14 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 
-export default function Home() {
+export default function farming() {
   const address = useAddress();
   const [amountToStake, setAmountToStake] = useState(0);
   const [amountToWithdraw, setAmountToWithdraw] = useState(0);
 
   // Initialize all the contracts
   const { contract: staking, isLoading: isStakingLoading } = useContract(
-    stakingContractAddress,
+    stakingContractAddressLp,
     "custom"
   );
 
@@ -112,32 +112,31 @@ export default function Home() {
           Earn passive income with zerogic staking{" "}
           <span className={styles.span}> and earn rupiah-c tokens!</span>
         </p>
-        <img src="/dr.png" width={600} className={styles.drs} />
+        <img src="/wew.png" width={200} className={styles.drs} />
         <Accordion defaultIndex={[0]} allowMultiple className={styles.apa}>
-          <AccordionItem className={styles.apa}>
+          <AccordionItem>
             <h2>
               <AccordionButton
                 className={styles.footer}
-                _expanded={{ bg: "rgba(163, 0, 0, 0.574)", color: "white" }}
+                _expanded={{ bg: "rgba(5, 163, 0, 0.574)", color: "white" }}
               >
                 <Image
                   borderRadius="full"
                   boxSize="80px"
-                  src="./zgc.png"
+                  src="./farms.png"
                   alt="ZGC-MATIC"
                 />
 
-                <h3>Stake Zgc Ern Idrc </h3>
+                <h3>Stake LP tokens </h3>
 
                 <AccordionIcon />
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              {" "}
               <div className={styles.grid}>
-                <a className={styles.card}>
+                <a className={styles.cardw}>
                   <div className={styles.judul}>
-                    <p>Zgc Balance:</p>
+                    <p>Zgc-Lp Balance:</p>
                     <p>{stakingTokenBalance?.displayValue}</p>
                   </div>
                   <input
@@ -148,10 +147,10 @@ export default function Home() {
                   />
                   <Web3Button
                     className={styles.button}
-                    contractAddress={stakingContractAddress}
+                    contractAddress={stakingContractAddressLp}
                     action={async (contract) => {
                       await stakingToken.setAllowance(
-                        stakingContractAddress,
+                        stakingContractAddressLp,
                         amountToStake
                       );
                       await contract.call("stake", [
@@ -177,7 +176,7 @@ export default function Home() {
                   />
                   <Web3Button
                     className={styles.button}
-                    contractAddress={stakingContractAddress}
+                    contractAddress={stakingContractAddressLp}
                     action={async (contract) => {
                       await contract.call("withdraw", [
                         ethers.utils.parseEther(amountToWithdraw),
@@ -189,7 +188,7 @@ export default function Home() {
                   </Web3Button>
                 </a>
 
-                <a className={styles.card}>
+                <a className={styles.cardw}>
                   <div className={styles.rew}>
                     <p>Reward Idrc</p>
                     <h4>
@@ -198,8 +197,9 @@ export default function Home() {
                     </h4>
                   </div>
                   <Web3Button
+                    color="red"
                     className={styles.button}
-                    contractAddress={stakingContractAddress}
+                    contractAddress={stakingContractAddressLp}
                     action={async (contract) => {
                       await contract.call("claimRewards", []);
                       alert("Rewards claimed successfully!");
@@ -212,9 +212,17 @@ export default function Home() {
                     <p>{rewardTokenBalance?.displayValue}</p>
                   </div>
                 </a>
+
+                <a
+                  className={styles.tetxx}
+                  color="rgba(5, 163, 0, 0.574)"
+                  href="https://plaxswap.io/add/MATIC/0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5"
+                >
+                  + Get Lp Tokens
+                </a>
                 <img
-                  src="./ling.png"
-                  width={200}
+                  src="./stonew.png"
+                  width={240}
                   className={styles.lingkaran}
                 />
               </div>
@@ -229,8 +237,8 @@ export default function Home() {
         >
           $ Buy Zerogic (ZGC)
         </a>
-        <a className={styles.buy} href="/farming">
-          Farming
+        <a className={styles.buy} href="/">
+          Pools
         </a>
       </main>
     </div>
