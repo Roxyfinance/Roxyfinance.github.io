@@ -106,7 +106,7 @@ export default function farming() {
       <main className={styles.main}>
         <img src="/zgc.png" width={300} className={styles.down} />
         <h2 className={styles.description}>
-          Stake Zerogic <span className={styles.span}> Earn Idrc!</span>
+          Farming Zerogic <span className={styles.span}> Earn Idrc!</span>
         </h2>
         <p className={styles.paragraf}>
           Earn passive income with zerogic staking{" "}
@@ -190,7 +190,7 @@ export default function farming() {
 
                 <a className={styles.cardw}>
                   <div className={styles.rew}>
-                    <p>Reward Idrc</p>
+                    <img src="./idrc.png" width={100} />
                     <h4>
                       {stakeInfo &&
                         ethers.utils.formatEther(stakeInfo[1].toString())}

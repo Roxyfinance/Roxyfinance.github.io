@@ -191,7 +191,7 @@ export default function Home() {
 
                 <a className={styles.card}>
                   <div className={styles.rew}>
-                    <p>Reward Idrc</p>
+                    <img src="./idrc.png" width={100} />
                     <h4>
                       {stakeInfo &&
                         ethers.utils.formatEther(stakeInfo[1].toString())}
