@@ -6,7 +6,19 @@ import {
   walletConnect,
   darkTheme,
 } from "@thirdweb-dev/react";
-
+import Navbar from "../component/navbar";
+import { Box } from "@chakra-ui/react";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
+import { Button, ButtonGroup } from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
 import {
   useAddress,
   useContract,
@@ -15,7 +27,6 @@ import {
   useTokenBalance,
   Web3Button,
 } from "@thirdweb-dev/react";
-import { Image } from "@chakra-ui/react";
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
@@ -27,6 +38,7 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
+import { color } from "framer-motion";
 
 export default function farming() {
   const address = useAddress();
@@ -35,10 +47,10 @@ export default function farming() {
 
   // Initialize all the contracts
   const { contract: staking, isLoading: isStakingLoading } = useContract(
-    stakingContractAddressLp,
+    stakingContractAddress,
     "custom"
   );
-
+  const { isOpen, onOpen, onClose } = useDisclosure();
   // Get contract data from staking contract
   const { data: rewardTokenAddress } = useContractRead(staking, "rewardToken");
   const { data: stakingTokenAddress } = useContractRead(
@@ -78,169 +90,156 @@ export default function farming() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.connect}>
-        <ConnectWallet
-          theme={darkTheme({
-            colors: {
-              secondaryButtonBg: "#9e0000",
-              connectedButtonBg: "#9e0000",
-            },
-          })}
-          switchToActiveChain={true}
-          modalSize={"compact"}
-          welcomeScreen={{
-            img: {
-              src: "ipfs://QmSJFXUAMSf1GLtdSM7WyRcx58SzqpoQgN4hZLT8i3uRXJ/zgc-modified.png",
-              width: 150,
-              height: 150,
-            },
-            title: "Welcome to zerogic staking",
-          }}
-          modalTitleIconUrl={
-            "ipfs://QmSJFXUAMSf1GLtdSM7WyRcx58SzqpoQgN4hZLT8i3uRXJ/zgc-modified.png"
-          }
-        />
-      </div>
-
-      <main className={styles.main}>
-        <img src="/zgc.png" width={300} className={styles.down} />
-        <h2 className={styles.description}>
-          Farming Zerogic <span className={styles.span}> Earn Idrc!</span>
-        </h2>
-        <p className={styles.paragraf}>
-          Earn passive income with zerogic staking{" "}
-          <span className={styles.span}> and earn rupiah-c tokens!</span>
-        </p>
-        <img src="/wew.png" width={200} className={styles.drs} />
-        <Accordion defaultIndex={[0]} allowMultiple className={styles.apa}>
-          <AccordionItem>
-            <h2>
-              <AccordionButton
-                className={styles.footer}
-                _expanded={{ bg: "rgba(5, 163, 0, 0.574)", color: "white" }}
+    <AccordionItem>
+      <h2>
+        <AccordionButton className={styles.menu}>
+          <Box className={styles.box} as="span" flex="1" textAlign="left">
+            <div className={styles.boxx}>
+              <img src="/zgc12.png" width={30} />
+              <h5 className={styles.pad}>Stake Zgc</h5>
+            </div>
+            <h5>
+              {stakeInfo && ethers.utils.formatEther(stakeInfo[1].toString())}
+            </h5>
+          </Box>
+          <AccordionIcon />
+        </AccordionButton>
+      </h2>
+      <AccordionPanel pb={4}>
+        <div className={styles.now}>
+          <h4>
+            <span className={styles.ap}>Idrt</span> Earned
+          </h4>
+          <div className={styles.reward}>
+            <h4 className={styles.now}>
+              {stakeInfo && ethers.utils.formatEther(stakeInfo[1].toString())}
+            </h4>
+            <div className={styles.but}>
+              <Web3Button
+                contractAddress={stakingContractAddress}
+                action={async (contract) => {
+                  await contract.call("claimRewards", []);
+                  alert("Rewards claimed successfully!");
+                }}
               >
-                <Image
-                  borderRadius="full"
-                  boxSize="80px"
-                  src="./farms.png"
-                  alt="ZGC-MATIC"
-                />
-
-                <h3>Stake LP tokens </h3>
-
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              <div className={styles.grid}>
-                <a className={styles.cardw}>
-                  <div className={styles.judul}>
-                    <p>Zgc-Lp Balance:</p>
-                    <p>{stakingTokenBalance?.displayValue}</p>
-                  </div>
-                  <input
-                    className={styles.textbox}
-                    type="number"
-                    value={amountToStake}
-                    onChange={(e) => setAmountToStake(e.target.value)}
-                  />
-                  <Web3Button
-                    className={styles.button}
-                    contractAddress={stakingContractAddressLp}
-                    action={async (contract) => {
-                      await stakingToken.setAllowance(
-                        stakingContractAddressLp,
-                        amountToStake
-                      );
-                      await contract.call("stake", [
-                        ethers.utils.parseEther(amountToStake),
-                      ]);
-                      alert("Tokens staked successfully!");
-                    }}
-                  >
-                    Stake
-                  </Web3Button>
-                  <div className={styles.judul}>
-                    <p>Current staked:</p>
-                    <p>
-                      {stakeInfo &&
-                        ethers.utils.formatEther(stakeInfo[0].toString())}
-                    </p>
-                  </div>
-                  <input
-                    className={styles.textbox}
-                    type="number"
-                    value={amountToWithdraw}
-                    onChange={(e) => setAmountToWithdraw(e.target.value)}
-                  />
-                  <Web3Button
-                    className={styles.button}
-                    contractAddress={stakingContractAddressLp}
-                    action={async (contract) => {
-                      await contract.call("withdraw", [
-                        ethers.utils.parseEther(amountToWithdraw),
-                      ]);
-                      alert("Tokens unstaked successfully!");
-                    }}
-                  >
-                    Unstake
-                  </Web3Button>
-                </a>
-
-                <a className={styles.cardw}>
-                  <div className={styles.rew}>
-                    <img src="./idrc.png" width={100} />
-                    <h4>
-                      {stakeInfo &&
-                        ethers.utils.formatEther(stakeInfo[1].toString())}
-                    </h4>
-                  </div>
-                  <Web3Button
-                    color="red"
-                    className={styles.button}
-                    contractAddress={stakingContractAddressLp}
-                    action={async (contract) => {
-                      await contract.call("claimRewards", []);
-                      alert("Rewards claimed successfully!");
-                    }}
-                  >
-                    Harvest
-                  </Web3Button>
-                  <div className={styles.rew}>
-                    <p>Idrc Balance:</p>
-                    <p>{rewardTokenBalance?.displayValue}</p>
-                  </div>
-                </a>
-
-                <a
-                  className={styles.tetxx}
-                  color="rgba(5, 163, 0, 0.574)"
-                  href="https://plaxswap.io/add/MATIC/0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5"
-                >
-                  + Get Lp Tokens
-                </a>
-                <img
-                  src="./stonew.png"
-                  width={240}
-                  className={styles.lingkaran}
-                />
-              </div>
-            </AccordionPanel>
-          </AccordionItem>
-        </Accordion>
-        <div className={styles.maini}>
-          <a
-            className={styles.buy}
-            href="https://plaxswap.io/swap?inputCurrency=Matic&outputCurrency=0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5"
-          >
-            $ Buy Zerogic (ZGC)
-          </a>
-          <a className={styles.buy} href="/">
-            Pools
-          </a>
+                Harvest
+              </Web3Button>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+        <div className={styles.now}>
+          <div>
+            <h4>
+              <span className={styles.ap}>Zgc</span> Staked
+            </h4>
+          </div>
+          <div className={styles.reward}>
+            <h4 className={styles.now}>
+              {stakeInfo && ethers.utils.formatEther(stakeInfo[0].toString())}
+            </h4>
+            <div className={styles.but}>
+              <div>
+                <Button className={styles.button} onClick={onOpen}>
+                  Stake
+                </Button>
+
+                <Modal
+                  className={styles.up}
+                  closeOnOverlayClick={false}
+                  isOpen={isOpen}
+                  onClose={onClose}
+                >
+                  <ModalOverlay />
+                  <ModalContent className={styles.modal}>
+                    <ModalCloseButton className={styles.clos} />
+                    <ModalHeader>Wallet Balance</ModalHeader>
+
+                    <ModalBody pb={6}>
+                      <div className={styles.judul}>
+                        <p>IDRT Balance:</p>
+                        <p>{rewardTokenBalance?.displayValue}</p>
+                      </div>
+                      <div className={styles.judul}>
+                        <p>ZGC Balance:</p>
+                        <p>{stakingTokenBalance?.displayValue}</p>
+                      </div>
+                    </ModalBody>
+                    <div className={styles.close}>
+                      <input
+                        className={styles.textbox}
+                        type="number"
+                        value={amountToStake}
+                        onChange={(e) => setAmountToStake(e.target.value)}
+                      />
+                      <input
+                        className={styles.textbox}
+                        type="number"
+                        value={amountToStake}
+                        onChange={(e) => setAmountToStake(e.target.value)}
+                      />
+                    </div>
+                    <ModalFooter>
+                      <Web3Button
+                        className={styles.clos}
+                        contractAddress={stakingContractAddress}
+                        action={async (contract) => {
+                          await stakingToken.setAllowance(
+                            stakingContractAddress,
+                            amountToStake
+                          );
+                          await contract.call("stake", [
+                            ethers.utils.parseEther(amountToStake),
+                          ]);
+                          alert("Tokens staked successfully!");
+                        }}
+                      >
+                        Stake
+                      </Web3Button>
+                      <Web3Button
+                        className={styles.clos}
+                        contractAddress={stakingContractAddress}
+                        action={async (contract) => {
+                          await contract.call("withdraw", [
+                            ethers.utils.parseEther(amountToWithdraw),
+                          ]);
+                          alert("Tokens unstaked successfully!");
+                        }}
+                      >
+                        Unstake
+                      </Web3Button>
+                    </ModalFooter>
+                  </ModalContent>
+                </Modal>
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.bung}>
+          <div className={styles.foot}>
+            <h4>APR:</h4>
+            <h4>-</h4>
+          </div>
+          <div className={styles.foot}>
+            <h4>Total Staked</h4>
+            <h4>-</h4>
+          </div>
+          <div className={styles.foot}>
+            <h4>Ends in:</h4>
+            <div className={styles.ass}>
+              <a className={styles.ap} href="/farming">
+                Finished
+              </a>
+              <a className={styles.ap} href="/farming">
+                View Project
+              </a>
+              <a className={styles.ap} href="/farming">
+                View Contract
+              </a>
+            </div>
+          </div>
+        </div>
+      </AccordionPanel>
+    </AccordionItem>
   );
 }
