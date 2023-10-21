@@ -191,7 +191,7 @@ export default function Home() {
 
                 <a className={styles.card}>
                   <div className={styles.rew}>
-                    <img src="./idrc.png" width={100} />
+                    <img src="./idrt1.png" width={100} />
                     <h4>
                       {stakeInfo &&
                         ethers.utils.formatEther(stakeInfo[1].toString())}
@@ -208,7 +208,7 @@ export default function Home() {
                     Harvest
                   </Web3Button>
                   <div className={styles.rew}>
-                    <p>Idrc Balance:</p>
+                    <p>Idrt Balance:</p>
                     <p>{rewardTokenBalance?.displayValue}</p>
                   </div>
                 </a>
@@ -221,17 +221,17 @@ export default function Home() {
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
-      </main>
-      <main className={styles.maini}>
-        <a
-          className={styles.buy}
-          href="https://plaxswap.io/swap?inputCurrency=Matic&outputCurrency=0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5"
-        >
-          $ Buy Zerogic (ZGC)
-        </a>
-        <a className={styles.buy} href="/farming">
-          Farming
-        </a>
+        <div className={styles.maini}>
+          <a
+            className={styles.buy}
+            href="https://plaxswap.io/swap?inputCurrency=Matic&outputCurrency=0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5"
+          >
+            $ Buy Zerogic (ZGC)
+          </a>
+          <a className={styles.buy} href="/farming">
+            Farming
+          </a>
+        </div>
       </main>
     </div>
   );

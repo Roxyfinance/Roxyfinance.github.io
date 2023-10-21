@@ -229,17 +229,17 @@ export default function farming() {
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
-      </main>
-      <main className={styles.maini}>
-        <a
-          className={styles.buy}
-          href="https://plaxswap.io/swap?inputCurrency=Matic&outputCurrency=0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5"
-        >
-          $ Buy Zerogic (ZGC)
-        </a>
-        <a className={styles.buy} href="/">
-          Pools
-        </a>
+        <div className={styles.maini}>
+          <a
+            className={styles.buy}
+            href="https://plaxswap.io/swap?inputCurrency=Matic&outputCurrency=0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5"
+          >
+            $ Buy Zerogic (ZGC)
+          </a>
+          <a className={styles.buy} href="/">
+            Pools
+          </a>
+        </div>
       </main>
     </div>
   );

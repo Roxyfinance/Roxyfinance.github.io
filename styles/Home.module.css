@@ -20,7 +20,7 @@
   width: fit-content;
 }
 .maini {
-  min-height: 150vh;
+  margin-top: -100px;
   padding: 4rem 0;
   display: flex;
   justify-content: center;
