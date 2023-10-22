@@ -6,6 +6,7 @@ import {
   walletConnect,
   darkTheme,
 } from "@thirdweb-dev/react";
+import { useRouter } from "next/router";
 import Navbar from "../component/navbar";
 import { Box } from "@chakra-ui/react";
 import {
@@ -295,7 +296,6 @@ export default function Home() {
                 </div>
               </AccordionPanel>
             </AccordionItem>
-            <Navbar />
           </Accordion>
         </div>
       </div>
