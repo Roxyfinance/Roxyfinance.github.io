@@ -1,12 +1,3 @@
-import {
-  ThirdwebProvider,
-  ConnectWallet,
-  metamaskWallet,
-  coinbaseWallet,
-  walletConnect,
-  darkTheme,
-} from "@thirdweb-dev/react";
-import Navbar from "../component/navbar";
 import { Box } from "@chakra-ui/react";
 import {
   Modal,

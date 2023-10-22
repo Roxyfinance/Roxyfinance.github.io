@@ -300,9 +300,6 @@ export default function Home() {
         </div>
       </div>
       {/* staking */}
-      <div className={styles.tes}>
-        <img className={styles.down} src="/wew.png" width={250} />
-      </div>
     </div>
   );
 }
