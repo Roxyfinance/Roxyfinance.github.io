@@ -6,7 +6,10 @@ import {
   walletConnect,
   darkTheme,
 } from "@thirdweb-dev/react";
+
+import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import Navbar from "../component/navbar";
+import Idrc from "../component/Idrc";
 import { Box } from "@chakra-ui/react";
 import {
   Modal,
@@ -38,7 +41,6 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
-import { color } from "framer-motion";
 
 export default function Home() {
   const address = useAddress();
@@ -128,10 +130,51 @@ export default function Home() {
         </div>
       </div>
       {/* MENU */}
+      {/* tombol c */}
+      <div className={styles.atas}>
+        <div className={styles.chek}>
+          <Avatar
+            className={styles.lingkarandua}
+            width={35}
+            name="Zerogic"
+            src="/zgc12.png"
+          />
+          <Avatar
+            className={styles.lingkarandua}
+            width={35}
+            name="Zerogic"
+            src="/poly.png"
+          />
+          <Avatar
+            className={styles.lingkarandua}
+            width={35}
+            name="Zerogic"
+            src="/quic.png"
+          />
+          <Avatar
+            className={styles.lingkarandua}
+            width={35}
+            name="Zerogic"
+            src="/usdt.png"
+          />
+          <Avatar
+            className={styles.lingkarandua}
+            width={35}
+            name="Zerogic"
+            src="/idrt.png"
+          />
+          <Avatar
+            className={styles.lingkarandua}
+            width={35}
+            name="Zerogic"
+            src="/tectonic.png"
+          />
+        </div>
+      </div>
 
       <div className={styles.accor}>
         <div className={styles.menu2}>
-          <Accordion defaultIndex={[0]} allowMultiple>
+          <Accordion allowMultiple>
             <AccordionItem>
               <h2>
                 <AccordionButton className={styles.menu}>
@@ -142,8 +185,8 @@ export default function Home() {
                     textAlign="left"
                   >
                     <div className={styles.boxx}>
-                      <img src="/zgc12.png" width={30} />
-                      <h5 className={styles.pad}>Stake Zgc</h5>
+                      <img src="/zgcs.png" width={30} />
+                      <h5 className={styles.pad}>Stake Zgc Earn Idrt</h5>
                     </div>
                     <h5>
                       {stakeInfo &&
@@ -202,16 +245,22 @@ export default function Home() {
                           <ModalOverlay />
                           <ModalContent className={styles.modal}>
                             <ModalCloseButton className={styles.clos} />
-                            <ModalHeader>Wallet Balance</ModalHeader>
+                            <ModalHeader className={styles.judul}>
+                              Wallet Balance
+                            </ModalHeader>
 
                             <ModalBody pb={6}>
                               <div className={styles.judul}>
-                                <p>Idrt Balance:</p>
-                                <p>{rewardTokenBalance?.displayValue}</p>
+                                <h4>Idrt Balance:</h4>
+                                <h4 className={styles.nasw}>
+                                  {rewardTokenBalance?.displayValue}
+                                </h4>
                               </div>
                               <div className={styles.judul}>
-                                <p>Zgc Balance:</p>
-                                <p>{stakingTokenBalance?.displayValue}</p>
+                                <h4>Zgc Balance:</h4>
+                                <h4 className={styles.nasw}>
+                                  {stakingTokenBalance?.displayValue}
+                                </h4>
                               </div>
                             </ModalBody>
                             <div className={styles.close}>
@@ -249,18 +298,20 @@ export default function Home() {
                               >
                                 Stake
                               </Web3Button>
-                              <Web3Button
-                                className={styles.clos}
-                                contractAddress={stakingContractAddress}
-                                action={async (contract) => {
-                                  await contract.call("withdraw", [
-                                    ethers.utils.parseEther(amountToWithdraw),
-                                  ]);
-                                  alert("Tokens unstaked successfully!");
-                                }}
-                              >
-                                Unstake
-                              </Web3Button>
+                              <div className={styles.web}>
+                                <Web3Button
+                                  className={styles.clos}
+                                  contractAddress={stakingContractAddress}
+                                  action={async (contract) => {
+                                    await contract.call("withdraw", [
+                                      ethers.utils.parseEther(amountToWithdraw),
+                                    ]);
+                                    alert("Tokens unstaked successfully!");
+                                  }}
+                                >
+                                  Unstake
+                                </Web3Button>
+                              </div>
                             </ModalFooter>
                           </ModalContent>
                         </Modal>
@@ -272,11 +323,11 @@ export default function Home() {
                 <div className={styles.bung}>
                   <div className={styles.foot}>
                     <h4>APR:</h4>
-                    <h4>-</h4>
+                    <h4>3.56%</h4>
                   </div>
                   <div className={styles.foot}>
-                    <h4>Total Staked</h4>
-                    <h4>-</h4>
+                    <h4>Reward</h4>
+                    <h4>500.000 Idrt</h4>
                   </div>
                   <div className={styles.foot}>
                     <h4>Ends in:</h4>
@@ -284,10 +335,13 @@ export default function Home() {
                       <a className={styles.ap} href="/farming">
                         Finished
                       </a>
-                      <a className={styles.ap} href="/farming">
+                      <a className={styles.ap} href="https://rupiahtoken.com/">
                         View Project
                       </a>
-                      <a className={styles.ap} href="/farming">
+                      <a
+                        className={styles.ap}
+                        href="https://polygonscan.com/address/0x8e85dd7816369fea2a3722f2e88e30a3473a711e"
+                      >
                         View Contract
                       </a>
                     </div>
@@ -296,10 +350,14 @@ export default function Home() {
               </AccordionPanel>
             </AccordionItem>
             <Navbar />
+            <Idrc />
           </Accordion>
         </div>
       </div>
       {/* staking */}
+      <div className={styles.gambar}>
+        <img src="/wew.png" width={250} className={styles.down} />
+      </div>
     </div>
   );
 }

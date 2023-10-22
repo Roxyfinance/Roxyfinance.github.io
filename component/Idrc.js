@@ -21,7 +21,7 @@ import {
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
-import { stakingContractAddressLp } from "../const/Lpcontract";
+import { stakingContractAddressLp } from "../const/idrc";
 import {
   Accordion,
   AccordionItem,
@@ -30,7 +30,7 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 
-export default function navbar() {
+export default function Idrc() {
   const address = useAddress();
   const [amountToStake, setAmountToStake] = useState(0);
   const [amountToWithdraw, setAmountToWithdraw] = useState(0);
@@ -85,8 +85,8 @@ export default function navbar() {
         <AccordionButton className={styles.menu}>
           <Box className={styles.box} as="span" flex="1" textAlign="left">
             <div className={styles.boxx}>
-              <img src="/lps.png" width={30} />
-              <h5 className={styles.pad}>Stake Lp Earn Idrc</h5>
+              <img src="/idrc.png" width={30} />
+              <h5 className={styles.pad}>Stake Zgc Earn Irdc</h5>
             </div>
             <h5>
               {stakeInfo && ethers.utils.formatEther(stakeInfo[1].toString())}
