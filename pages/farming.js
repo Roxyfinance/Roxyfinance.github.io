@@ -16,6 +16,8 @@ import {
   MenuOptionGroup,
   MenuDivider,
 } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
 
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
@@ -127,7 +129,9 @@ export default function Home() {
               <MenuItem className={styles.bread}>Buy Token</MenuItem>
               <MenuItem className={styles.bread}>Swap</MenuItem>
               <MenuItem className={styles.bread}>Farms</MenuItem>
-              <MenuItem className={styles.bread}>About us</MenuItem>
+              <MenuItem className={styles.bread}>
+                <Link href="/">Vault</Link>
+              </MenuItem>
             </MenuList>
           </Menu>
         </div>
@@ -156,8 +160,8 @@ export default function Home() {
             </BreadcrumbItem>
 
             <BreadcrumbItem>
-              <BreadcrumbLink className={styles.bread} href="#">
-                About us
+              <BreadcrumbLink className={styles.bread} href="/">
+                Vault
               </BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
@@ -249,6 +253,14 @@ export default function Home() {
         <img src="/wew.png" width={200} className={styles.down} />
       </div>
       <Footer />
+      <div className={styles.copyy}>
+        <p class="copyright">
+          &copy; 2023 Zerogic All Rights Reserved by
+          <a href="" class="copyright-link">
+            Zerogic
+          </a>
+        </p>
+      </div>
     </div>
   );
 }

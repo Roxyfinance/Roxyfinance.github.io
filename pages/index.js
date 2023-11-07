@@ -6,6 +6,8 @@ import {
   walletConnect,
   darkTheme,
 } from "@thirdweb-dev/react";
+import { Link } from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 
@@ -127,8 +129,10 @@ export default function Home() {
               <MenuItem className={styles.bread}>Home</MenuItem>
               <Buy />
               <MenuItem className={styles.bread}>Swap</MenuItem>
-              <MenuItem className={styles.bread}>Farms</MenuItem>
-              <MenuItem className={styles.bread}>About us</MenuItem>
+              <MenuItem className={styles.bread}>
+                <Link href="/farming">Farms</Link>
+              </MenuItem>
+              <MenuItem className={styles.bread}>Vault</MenuItem>
             </MenuList>
           </Menu>
         </div>
@@ -249,12 +253,11 @@ export default function Home() {
                   >
                     <div className={styles.boxx}>
                       <img src="/zgcs.png" width={45} />
-                      <h3 className={styles.pad}>
+                      <h3 className={styles.padian}>
                         Earn Idrt <span className={styles.padi}>Stake Zgc</span>
                       </h3>
                     </div>
                     <h4>APR 3.5%</h4>
-                    <h4>TVL $-</h4>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -382,10 +385,7 @@ export default function Home() {
                     <h3>APR:</h3>
                     <h3>3.56%</h3>
                   </div>
-                  <div className={styles.foot}>
-                    <h4>Reward</h4>
-                    <h4>500.000 Idrt</h4>
-                  </div>
+                  <div className={styles.foot}></div>
                   <div className={styles.foot}>
                     <h4>Ends in:</h4>
                     <div className={styles.ass}>
@@ -414,6 +414,14 @@ export default function Home() {
         <img src="/wew.png" width={200} className={styles.down} />
       </div>
       <Footer />
+      <div className={styles.copyy}>
+        <p class="copyright">
+          &copy; 2023 Zerogic All Rights Reserved by
+          <a href="#" class="copyright-link">
+            Zerogic
+          </a>
+        </p>
+      </div>
     </div>
   );
 }

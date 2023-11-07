@@ -86,12 +86,11 @@ export default function Idrc() {
           <Box className={styles.box} as="span" flex="1" textAlign="left">
             <div className={styles.boxx}>
               <img src="/idrc.png" width={45} />
-              <h3 className={styles.pad}>
+              <h3 className={styles.padian}>
                 Earn Idrc <span className={styles.padi}>Stake Zgc</span>
               </h3>
             </div>
             <h4>APR 3.5%</h4>
-            <h4>TVL $-</h4>
           </Box>
           <AccordionIcon />
         </AccordionButton>
@@ -212,10 +211,7 @@ export default function Idrc() {
             <h4>APR:</h4>
             <h4>5.5%</h4>
           </div>
-          <div className={styles.foot}>
-            <h4>Reward</h4>
-            <h4>500.000 Idrc</h4>
-          </div>
+          <div className={styles.foot}></div>
           <div className={styles.foot}>
             <h4>Ends in:</h4>
             <div className={styles.ass}>
