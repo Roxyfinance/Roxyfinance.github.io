@@ -85,12 +85,10 @@ export default function Idrc() {
         <AccordionButton className={styles.menu}>
           <Box className={styles.box} as="span" flex="1" textAlign="left">
             <div className={styles.boxx}>
-              <img src="/idrc.png" width={30} />
-              <h5 className={styles.pad}>Stake Zgc Earn Irdc</h5>
+              <img src="/idrc.png" width={40} />
+              <h3 className={styles.pad}>Stake Zgc Earn Irdc</h3>
             </div>
-            <h5>
-              {stakeInfo && ethers.utils.formatEther(stakeInfo[1].toString())}
-            </h5>
+            <h3>APR 2.54%</h3>
           </Box>
           <AccordionIcon />
         </AccordionButton>
@@ -132,7 +130,6 @@ export default function Idrc() {
                 <Button className={styles.button} onClick={onOpen}>
                   Stake
                 </Button>
-
                 <Modal
                   className={styles.up}
                   closeOnOverlayClick={false}
@@ -141,10 +138,11 @@ export default function Idrc() {
                 >
                   <ModalOverlay />
                   <ModalContent className={styles.modal}>
-                    <ModalCloseButton className={styles.clos} />
-                    <ModalHeader>Wallet Balance</ModalHeader>
+                    <ModalHeader>
+                      <h2>Your Wallet</h2>
+                    </ModalHeader>
 
-                    <ModalBody pb={6}>
+                    <ModalBody p={10}>
                       <div className={styles.judul}>
                         <p>IdrcBalance:</p>
                         <p>{rewardTokenBalance?.displayValue}</p>
@@ -198,6 +196,7 @@ export default function Idrc() {
                         Unstake
                       </Web3Button>
                     </ModalFooter>
+                    <ModalCloseButton className={styles.closb} />
                   </ModalContent>
                 </Modal>
                 <div />
@@ -220,10 +219,7 @@ export default function Idrc() {
               <a className={styles.ap} href="">
                 Finished
               </a>
-              <a
-                className={styles.ap}
-                href="https://plaxswap.io/add/MATIC/0x4A7db095D7D56De8af219a5aE9C0b3Be11F240F5"
-              >
+              <a className={styles.ap} href="">
                 Get Lp Token
               </a>
               <a className={styles.ap} href="/farming">

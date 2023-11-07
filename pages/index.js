@@ -8,7 +8,9 @@ import {
 } from "@thirdweb-dev/react";
 
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
-import Navbar from "../component/navbar";
+
+import Footer from "../component/footer";
+
 import Idrc from "../component/Idrc";
 import { Box } from "@chakra-ui/react";
 import {
@@ -40,6 +42,23 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+} from "@chakra-ui/react";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from "@chakra-ui/react";
+import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
 } from "@chakra-ui/react";
 
 export default function Home() {
@@ -94,16 +113,59 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {/* NAV */}
+      <div></div>
       <div className={styles.connect}>
+        <div className={styles.burger}>
+          <Menu>
+            <MenuButton
+              className={styles.breada}
+              as={Button}
+              rightIcon={<HamburgerIcon />}
+            ></MenuButton>
+            <MenuList className={styles.bread}>
+              <MenuItem className={styles.bread}>Farms</MenuItem>
+              <MenuItem className={styles.bread}>Buy</MenuItem>
+              <MenuItem className={styles.bread}>Download</MenuItem>
+            </MenuList>
+          </Menu>
+        </div>
         <div>
-          <img src="/zgc12.png" width={39} />
+          <Breadcrumb className={styles.breadt} separator="-">
+            <BreadcrumbItem isCurrentPage>
+              <BreadcrumbLink className={styles.bread} href="#">
+                Home
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem>
+              <BreadcrumbLink className={styles.bread} href="#">
+                Buy Token
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink className={styles.bread} href="#">
+                Swap
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink className={styles.bread} href="/farming">
+                Farms
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem>
+              <BreadcrumbLink className={styles.bread} href="#">
+                About us
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </Breadcrumb>
         </div>
         <div>
           <ConnectWallet
             theme={darkTheme({
               colors: {
-                secondaryButtonBg: "#9e0000",
-                connectedButtonBg: "#9e0000",
+                secondaryButtonBg: "#5e0000",
+                connectedButtonBg: "#5e0000",
               },
             })}
             switchToActiveChain={true}
@@ -125,7 +187,7 @@ export default function Home() {
       {/* NAV */}
       <div className={styles.card}>
         <div className={styles.header}>
-          <h1 className={styles.ts}>Zerogic Stake</h1>
+          <h1 className={styles.ts}>Vaults</h1>
           <h6>Just Stake Some Tokens To Earn,High APY, Low Risk.</h6>
         </div>
       </div>
@@ -137,7 +199,7 @@ export default function Home() {
             className={styles.lingkarandua}
             width={35}
             name="Zerogic"
-            src="/zgc12.png"
+            src="/zgc.png"
           />
           <Avatar
             className={styles.lingkarandua}
@@ -155,19 +217,19 @@ export default function Home() {
             className={styles.lingkarandua}
             width={35}
             name="Zerogic"
-            src="/usdt.png"
+            src="/ankr.png"
           />
           <Avatar
             className={styles.lingkarandua}
             width={35}
             name="Zerogic"
-            src="/idrt.png"
+            src="/catt.png"
           />
           <Avatar
             className={styles.lingkarandua}
             width={35}
             name="Zerogic"
-            src="/tectonic.png"
+            src="/etr.png"
           />
         </div>
       </div>
@@ -185,13 +247,12 @@ export default function Home() {
                     textAlign="left"
                   >
                     <div className={styles.boxx}>
-                      <img src="/zgcs.png" width={30} />
-                      <h5 className={styles.pad}>Stake Zgc Earn Idrt</h5>
+                      <img src="/zgcs.png" width={35} />
+                      <h3 className={styles.pad}>
+                        Earn Idrt <span className={styles.padi}>Stake Zgc</span>
+                      </h3>
                     </div>
-                    <h5>
-                      {stakeInfo &&
-                        ethers.utils.formatEther(stakeInfo[1].toString())}
-                    </h5>
+                    <h3>APR 3.5%</h3>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -244,23 +305,18 @@ export default function Home() {
                         >
                           <ModalOverlay />
                           <ModalContent className={styles.modal}>
-                            <ModalCloseButton className={styles.clos} />
-                            <ModalHeader className={styles.judul}>
-                              Wallet Balance
+                            <ModalHeader>
+                              <h2>Your Wallet</h2>
                             </ModalHeader>
 
-                            <ModalBody pb={6}>
+                            <ModalBody p={10}>
                               <div className={styles.judul}>
-                                <h4>Idrt Balance:</h4>
-                                <h4 className={styles.nasw}>
-                                  {rewardTokenBalance?.displayValue}
-                                </h4>
+                                <p>IdrcBalance:</p>
+                                <p>{rewardTokenBalance?.displayValue}</p>
                               </div>
                               <div className={styles.judul}>
-                                <h4>Zgc Balance:</h4>
-                                <h4 className={styles.nasw}>
-                                  {stakingTokenBalance?.displayValue}
-                                </h4>
+                                <p>Zgc Balance:</p>
+                                <p>{stakingTokenBalance?.displayValue}</p>
                               </div>
                             </ModalBody>
                             <div className={styles.close}>
@@ -298,21 +354,20 @@ export default function Home() {
                               >
                                 Stake
                               </Web3Button>
-                              <div className={styles.web}>
-                                <Web3Button
-                                  className={styles.clos}
-                                  contractAddress={stakingContractAddress}
-                                  action={async (contract) => {
-                                    await contract.call("withdraw", [
-                                      ethers.utils.parseEther(amountToWithdraw),
-                                    ]);
-                                    alert("Tokens unstaked successfully!");
-                                  }}
-                                >
-                                  Unstake
-                                </Web3Button>
-                              </div>
+                              <Web3Button
+                                className={styles.clos}
+                                contractAddress={stakingContractAddress}
+                                action={async (contract) => {
+                                  await contract.call("withdraw", [
+                                    ethers.utils.parseEther(amountToWithdraw),
+                                  ]);
+                                  alert("Tokens unstaked successfully!");
+                                }}
+                              >
+                                Unstake
+                              </Web3Button>
                             </ModalFooter>
+                            <ModalCloseButton className={styles.closb} />
                           </ModalContent>
                         </Modal>
                         <div />
@@ -322,8 +377,8 @@ export default function Home() {
                 </div>
                 <div className={styles.bung}>
                   <div className={styles.foot}>
-                    <h4>APR:</h4>
-                    <h4>3.56%</h4>
+                    <h3>APR:</h3>
+                    <h3>3.56%</h3>
                   </div>
                   <div className={styles.foot}>
                     <h4>Reward</h4>
@@ -332,16 +387,13 @@ export default function Home() {
                   <div className={styles.foot}>
                     <h4>Ends in:</h4>
                     <div className={styles.ass}>
-                      <a className={styles.ap} href="/farming">
+                      <a className={styles.ap} href="">
                         Finished
                       </a>
-                      <a className={styles.ap} href="https://rupiahtoken.com/">
+                      <a className={styles.ap} href="">
                         View Project
                       </a>
-                      <a
-                        className={styles.ap}
-                        href="https://polygonscan.com/address/0x8e85dd7816369fea2a3722f2e88e30a3473a711e"
-                      >
+                      <a className={styles.ap} href="">
                         View Contract
                       </a>
                     </div>
@@ -349,15 +401,17 @@ export default function Home() {
                 </div>
               </AccordionPanel>
             </AccordionItem>
-            <Navbar />
+
             <Idrc />
           </Accordion>
         </div>
       </div>
       {/* staking */}
+
       <div className={styles.gambar}>
-        <img src="/wew.png" width={250} className={styles.down} />
+        <img src="/wew.png" width={200} className={styles.down} />
       </div>
+      <Footer />
     </div>
   );
 }

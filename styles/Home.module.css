@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nosifer&display=swap");
+
 .container {
   font-family: "Shadow Into Light";
   overflow-x: hidden;
@@ -12,8 +13,8 @@
   padding: 10px;
 }
 .header {
-  font-family: "Nosifer", sans-serif;
-  font-size: 10px;
+  font-family: "Shadow Into Light";
+  font-size: 150%;
 }
 .ts {
   color: #ff5656db;
@@ -42,6 +43,10 @@
 .boxx {
   display: flex;
   align-items: center;
+}
+.padi {
+  color: #929292;
+  font-size: 12px;
 }
 .but {
   margin-bottom: 7px;
@@ -96,19 +101,86 @@
   margin: 10px 0;
   display: flex;
 }
-
+.closb {
+  margin-top: 20px;
+  margin-top: 10px;
+}
+.breaddua {
+  font-size: 20px;
+  color: rgb(238, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+.bread {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  background-color: #ff5656db;
+  border-radius: 10%;
+  padding: 10px;
+}
+.burger {
+  display: none;
+}
+.focon {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  background-color: #ff5656db;
+  margin-top: 50px;
+}
+.breada {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  background-color: #00000063;
+  border-radius: 10%;
+  padding: 10px;
+  display: none;
+}
+.bread:hover {
+  background-color: #111;
+  transition: 1s;
+}
+@media (max-width: 800px) {
+  .breadt {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+}
 .modal {
-  height: 100vh;
-  background: linear-gradient(rgb(106, 1, 1), rgb(114, 1, 1), rgb(39, 0, 0));
+  margin-top: 100px;
+  height: 50vh;
+  background: linear-gradient(rgb(106, 1, 1), rgb(1, 27, 114), rgb(39, 0, 0));
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 10px;
+  padding: 20px;
+  border-radius: 30px;
+  font-weight: bold;
 }
 .close {
   display: flex;
-  align-items: center;
   font-weight: bold;
+  margin-top: 10px;
+}
+.foder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 130px;
+  font-family: "Shadow Into Light";
+  color: rgb(52, 32, 32);
+  font-size: larger;
+}
+.foder h1 {
+  margin: 0;
 }
 
 .lingkarandua {
@@ -134,24 +206,29 @@
 
 .textbox {
   padding: 15px;
-  margin-bottom: 10px;
-  width: 150px;
-  margin-left: 7px;
+  width: 120px;
 }
 .nasw {
-  margin-top: -10px;
+  margin-top: 120px;
 }
 .web {
-  margin-left: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .judul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  margin-top: -10px;
+  margin-top: 10px;
   font-family: "Shadow Into Light", sans-serif;
   font-size: 13px;
+  font-weight: bold;
+}
+.bungkus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .up {
   padding: 50px;
@@ -263,6 +340,9 @@
   justify-content: space-around;
   max-width: 1200px;
 }
+.judul p {
+  margin: 0px;
+}
 
 .card {
   background: linear-gradient(
@@ -282,6 +362,7 @@
   align-items: center;
   box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.8);
   border: 1px dashed grey;
+  justify-content: space-between;
 }
 .tetxx {
   margin-top: 20px;

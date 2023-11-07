@@ -141,10 +141,11 @@ export default function navbar() {
                 >
                   <ModalOverlay />
                   <ModalContent className={styles.modal}>
-                    <ModalCloseButton className={styles.clos} />
-                    <ModalHeader>Wallet Balance</ModalHeader>
+                    <ModalHeader>
+                      <h2>Your Wallet</h2>
+                    </ModalHeader>
 
-                    <ModalBody pb={6}>
+                    <ModalBody p={10}>
                       <div className={styles.judul}>
                         <p>IdrcBalance:</p>
                         <p>{rewardTokenBalance?.displayValue}</p>
@@ -198,6 +199,7 @@ export default function navbar() {
                         Unstake
                       </Web3Button>
                     </ModalFooter>
+                    <ModalCloseButton className={styles.closb} />
                   </ModalContent>
                 </Modal>
                 <div />

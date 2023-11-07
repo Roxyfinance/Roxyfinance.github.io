@@ -2,8 +2,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Shadow Into Light";
+}
+p {
+  padding: 0;
 }
 
 a {
@@ -17,6 +19,7 @@ a {
 
 html {
   color-scheme: dark;
+  font-family: "Shadow Into Light";
 }
 body {
   color: #e7e8e8;
