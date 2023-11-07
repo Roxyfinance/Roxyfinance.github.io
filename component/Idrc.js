@@ -85,10 +85,13 @@ export default function Idrc() {
         <AccordionButton className={styles.menu}>
           <Box className={styles.box} as="span" flex="1" textAlign="left">
             <div className={styles.boxx}>
-              <img src="/idrc.png" width={40} />
-              <h3 className={styles.pad}>Stake Zgc Earn Irdc</h3>
+              <img src="/idrc.png" width={45} />
+              <h3 className={styles.pad}>
+                Earn Idrc <span className={styles.padi}>Stake Zgc</span>
+              </h3>
             </div>
-            <h3>APR 2.54%</h3>
+            <h4>APR 3.5%</h4>
+            <h4>TVL $-</h4>
           </Box>
           <AccordionIcon />
         </AccordionButton>

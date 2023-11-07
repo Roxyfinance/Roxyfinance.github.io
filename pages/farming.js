@@ -6,6 +6,17 @@ import {
   walletConnect,
   darkTheme,
 } from "@thirdweb-dev/react";
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from "@chakra-ui/react";
+import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
 
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import Navbar from "../component/navbar";
@@ -104,6 +115,22 @@ export default function Home() {
       {/* NAV */}
       <div></div>
       <div className={styles.connect}>
+        <div className={styles.burger}>
+          <Menu>
+            <MenuButton
+              className={styles.breada}
+              as={Button}
+              rightIcon={<HamburgerIcon />}
+            ></MenuButton>
+            <MenuList className={styles.bread}>
+              <MenuItem className={styles.bread}>Home</MenuItem>
+              <MenuItem className={styles.bread}>Buy Token</MenuItem>
+              <MenuItem className={styles.bread}>Swap</MenuItem>
+              <MenuItem className={styles.bread}>Farms</MenuItem>
+              <MenuItem className={styles.bread}>About us</MenuItem>
+            </MenuList>
+          </Menu>
+        </div>
         <div>
           <Breadcrumb className={styles.breadt} separator="-">
             <BreadcrumbItem>

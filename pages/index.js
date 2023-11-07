@@ -10,6 +10,7 @@ import {
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 
 import Footer from "../component/footer";
+import Buy from "../component/buy";
 
 import Idrc from "../component/Idrc";
 import { Box } from "@chakra-ui/react";
@@ -123,9 +124,11 @@ export default function Home() {
               rightIcon={<HamburgerIcon />}
             ></MenuButton>
             <MenuList className={styles.bread}>
+              <MenuItem className={styles.bread}>Home</MenuItem>
+              <Buy />
+              <MenuItem className={styles.bread}>Swap</MenuItem>
               <MenuItem className={styles.bread}>Farms</MenuItem>
-              <MenuItem className={styles.bread}>Buy</MenuItem>
-              <MenuItem className={styles.bread}>Download</MenuItem>
+              <MenuItem className={styles.bread}>About us</MenuItem>
             </MenuList>
           </Menu>
         </div>
@@ -138,9 +141,7 @@ export default function Home() {
             </BreadcrumbItem>
 
             <BreadcrumbItem>
-              <BreadcrumbLink className={styles.bread} href="#">
-                Buy Token
-              </BreadcrumbLink>
+              <Buy />
             </BreadcrumbItem>
             <BreadcrumbItem>
               <BreadcrumbLink className={styles.bread} href="#">
@@ -188,7 +189,7 @@ export default function Home() {
       <div className={styles.card}>
         <div className={styles.header}>
           <h1 className={styles.ts}>Vaults</h1>
-          <h6>Just Stake Some Tokens To Earn,High APY, Low Risk.</h6>
+          <h6>Just Stake Some Tokens To Earn,High APR, Low Risk.</h6>
         </div>
       </div>
       {/* MENU */}
@@ -247,12 +248,13 @@ export default function Home() {
                     textAlign="left"
                   >
                     <div className={styles.boxx}>
-                      <img src="/zgcs.png" width={35} />
+                      <img src="/zgcs.png" width={45} />
                       <h3 className={styles.pad}>
                         Earn Idrt <span className={styles.padi}>Stake Zgc</span>
                       </h3>
                     </div>
-                    <h3>APR 3.5%</h3>
+                    <h4>APR 3.5%</h4>
+                    <h4>TVL $-</h4>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>

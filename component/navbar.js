@@ -85,12 +85,13 @@ export default function navbar() {
         <AccordionButton className={styles.menu}>
           <Box className={styles.box} as="span" flex="1" textAlign="left">
             <div className={styles.boxx}>
-              <img src="/lps.png" width={30} />
-              <h5 className={styles.pad}>Stake Lp Earn Idrc</h5>
+              <img src="/lps.png" width={45} />
+              <h3 className={styles.pad}>
+                Earn Idrc <span className={styles.padi}>Stake Zgc</span>
+              </h3>
             </div>
-            <h5>
-              {stakeInfo && ethers.utils.formatEther(stakeInfo[1].toString())}
-            </h5>
+            <h4>APR 3.5%</h4>
+            <h4>TVL $-</h4>
           </Box>
           <AccordionIcon />
         </AccordionButton>

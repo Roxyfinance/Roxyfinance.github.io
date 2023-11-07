@@ -2,21 +2,25 @@ import styles from "../styles/Home.module.css";
 export default function footer() {
   return (
     <div className={styles.focon}>
-      <div>
+      <div className={styles.faconItem}>
+        <h1>Navigasi</h1>
+        <h4>Home</h4>
+        <h4>Farms</h4>
+        <h4>Vaults</h4>
+        <h4>Contact us</h4>
+      </div>
+      <div className={styles.faconItem}>
         <h1>Product</h1>
-        <p>asas</p>
+        <h4>AddLiquidity</h4>
+        <h4>Vaults</h4>
+        <h4>Farms</h4>
+        <h4>Swap</h4>
       </div>
-      <div>
+      <div className={styles.faconItemdua}>
         <h1>Partners</h1>
-        <img src="/zgcs.png" width={35} />
-      </div>
-      <div>
-        <h1>Partners</h1>
-        <p>asas</p>
-      </div>
-      <div>
-        <h1>Partners</h1>
-        <p>asas</p>
+        <img src="/quicke.png" width={205} />
+        <img src="/polysc.png" width={205} />
+        <img src="/aave.png" width={180} />
       </div>
     </div>
   );
