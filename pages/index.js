@@ -192,7 +192,7 @@ export default function Home() {
       {/* NAV */}
       <div className={styles.card}>
         <div className={styles.header}>
-          <h1 className={styles.ts}>Vaults</h1>
+          <h1 className={styles.ts}>HALO MELY MANIS</h1>
           <h6>Just Stake Some Tokens To Earn,High APR, Low Risk.</h6>
         </div>
       </div>
@@ -417,7 +417,7 @@ export default function Home() {
       <div className={styles.copyy}>
         <p class="copyright">
           &copy; 2023 Zerogic All Rights Reserved by
-          <a href="#" class="copyright-link">
+          <a href="#" className={styles.copyright}>
             Zerogic
           </a>
         </p>

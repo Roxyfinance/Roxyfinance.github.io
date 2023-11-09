@@ -24,17 +24,6 @@ import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import Navbar from "../component/navbar";
 import Footer from "../component/footer";
 
-import Idrc from "../component/Idrc";
-import { Box } from "@chakra-ui/react";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-} from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 import {
@@ -256,7 +245,7 @@ export default function Home() {
       <div className={styles.copyy}>
         <p class="copyright">
           &copy; 2023 Zerogic All Rights Reserved by
-          <a href="" class="copyright-link">
+          <a href="" className={styles.copyright}>
             Zerogic
           </a>
         </p>
