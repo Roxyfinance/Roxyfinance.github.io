@@ -15,6 +15,10 @@
 .header {
   font-family: "Shadow Into Light";
   font-size: 150%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 .ts {
   color: #ff5656db;
@@ -22,6 +26,7 @@
 .pad {
   margin-left: 10px;
 }
+
 .accor {
   margin-top: 50px;
   display: inline-flex;
@@ -192,6 +197,7 @@
   .breadt {
     display: none;
   }
+
   .burger {
     display: flex;
   }
@@ -211,6 +217,9 @@
     margin: 0 0 0 -50px;
     width: 100%;
     margin-bottom: 50px;
+  }
+  .gambardua {
+    display: none;
   }
 }
 .modal {
@@ -253,10 +262,20 @@
 .foder h1 {
   margin: 0;
 }
-
+.putar:hover {
+  animation: linga 2s linear infinite;
+}
 .lingkarandua {
   animation: ling 2s linear infinite alternate-reverse;
   margin: 0 5px;
+}
+@keyframes linga {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
 }
 @keyframes ling {
   0% {

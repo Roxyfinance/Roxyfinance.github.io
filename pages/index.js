@@ -6,6 +6,7 @@ import {
   walletConnect,
   darkTheme,
 } from "@thirdweb-dev/react";
+
 import { Link } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
@@ -192,8 +193,13 @@ export default function Home() {
       {/* NAV */}
       <div className={styles.card}>
         <div className={styles.header}>
-          <h1 className={styles.ts}>HALO MELY MANIS</h1>
-          <h6>Just Stake Some Tokens To Earn,High APR, Low Risk.</h6>
+          <div>
+            <h1 className={styles.ts}>Vaults</h1>
+            <h6>Just Stake Some Tokens To Earn,High APR, Low Risk.</h6>
+          </div>
+          <div className={styles.gambardua}>
+            <img src="/wew.png" width={200} className={styles.down} />
+          </div>
         </div>
       </div>
       {/* MENU */}
@@ -410,9 +416,6 @@ export default function Home() {
       </div>
       {/* staking */}
 
-      <div className={styles.gambar}>
-        <img src="/wew.png" width={200} className={styles.down} />
-      </div>
       <Footer />
       <div className={styles.copyy}>
         <p class="copyright">

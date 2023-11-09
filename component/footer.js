@@ -3,7 +3,7 @@ export default function footer() {
   return (
     <div className={styles.focon}>
       <div className={styles.faconItems}>
-        <img src="/zgc.png" width={70} />
+        <img className={styles.putar} src="/zgc.png" width={70} />
         <h1>Zerogic</h1>
       </div>
       <div className={styles.faconItem}>

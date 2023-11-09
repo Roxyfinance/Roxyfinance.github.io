@@ -7,6 +7,14 @@ import {
   darkTheme,
 } from "@thirdweb-dev/react";
 import {
+  Tag,
+  TagLabel,
+  TagLeftIcon,
+  TagRightIcon,
+  TagCloseButton,
+} from "@chakra-ui/react";
+import { Stack, HStack, VStack } from "@chakra-ui/react";
+import {
   Menu,
   MenuButton,
   MenuList,
@@ -104,7 +112,6 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {/* NAV */}
-      <div></div>
       <div className={styles.connect}>
         <div className={styles.burger}>
           <Menu>
@@ -182,8 +189,13 @@ export default function Home() {
       {/* NAV */}
       <div className={styles.card}>
         <div className={styles.header}>
-          <h1 className={styles.ts}>Farms</h1>
-          <h6>Just Stake Lp Tokens To Earn,High APR, Low Risk.</h6>
+          <div>
+            <h1 className={styles.ts}>Farms</h1>
+            <h6>Just Stake Lp Tokens To Earn,High APR, Low Risk.</h6>
+          </div>
+          <div className={styles.gambardua}>
+            <img src="/wew.png" width={200} className={styles.down} />
+          </div>
         </div>
       </div>
       {/* MENU */}
@@ -226,6 +238,18 @@ export default function Home() {
             name="Zerogic"
             src="/etr.png"
           />
+        </div>
+      </div>
+      <div classNmae={styles.header}>
+        <div>
+          <HStack spacing={4}>
+            {["lg"].map((size) => (
+              <Tag size={size} key={size} variant="outline" colorScheme="blue">
+                <TagLabel>Setting</TagLabel>
+                <TagRightIcon as={MdSettings} />
+              </Tag>
+            ))}
+          </HStack>
         </div>
       </div>
 
