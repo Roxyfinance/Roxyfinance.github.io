@@ -114,7 +114,6 @@ export default function Home() {
             ></MenuButton>
             <MenuList className={styles.bread}>
               <MenuItem className={styles.bread}>Home</MenuItem>
-              <MenuItem className={styles.bread}>Buy Token</MenuItem>
               <MenuItem className={styles.bread}>Swap</MenuItem>
               <MenuItem className={styles.bread}>Farms</MenuItem>
               <MenuItem className={styles.bread}>
@@ -128,12 +127,6 @@ export default function Home() {
             <BreadcrumbItem>
               <BreadcrumbLink className={styles.bread} href="/">
                 Home
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-
-            <BreadcrumbItem>
-              <BreadcrumbLink className={styles.bread} href="#">
-                Buy Token
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>

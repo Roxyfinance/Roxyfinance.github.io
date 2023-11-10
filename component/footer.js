@@ -11,7 +11,7 @@ export default function footer() {
         <p>Eternal</p>
         <p>Rupiah-C</p>
         <p>Zerogic</p>
-        <p>Clayswap</p>
+        <p>Midnight Sun</p>
       </div>
 
       <div className={styles.faconItem}>

@@ -7,11 +7,8 @@ import {
   darkTheme,
 } from "@thirdweb-dev/react";
 
-import { Link } from "@chakra-ui/react";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
-
+import Navbar from ".../component/navbar";
 import Footer from "../component/footer";
 
 import Idrc from "../component/Idrc";
@@ -52,19 +49,8 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from "@chakra-ui/react";
-import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-} from "@chakra-ui/react";
 
-export default function Home() {
+export default function Farming() {
   const address = useAddress();
   const [amountToStake, setAmountToStake] = useState(0);
   const [amountToWithdraw, setAmountToWithdraw] = useState(0);
@@ -118,52 +104,31 @@ export default function Home() {
       {/* NAV */}
       <div></div>
       <div className={styles.connect}>
-        <div className={styles.burger}>
-          <Menu>
-            <MenuButton
-              className={styles.breada}
-              as={Button}
-              rightIcon={<HamburgerIcon />}
-            ></MenuButton>
-            <MenuList className={styles.bread}>
-              <MenuItem className={styles.bread}>Home</MenuItem>
-              <MenuItem className={styles.bread}>
-                <Link href="https://zerogic.github.io/swap/https://zerogic.github.io/swap/">
-                  Swap
-                </Link>
-              </MenuItem>
-              <MenuItem className={styles.bread}>
-                <Link href="/farming">Farms</Link>
-              </MenuItem>
-              <MenuItem className={styles.bread}>
-                <Link href="/">Vault</Link>
-              </MenuItem>
-            </MenuList>
-          </Menu>
-        </div>
         <div>
-          <Breadcrumb className={styles.breadt} separator="-">
+          <Breadcrumb className={styles.breaddua} separator="-">
             <BreadcrumbItem isCurrentPage>
-              <BreadcrumbLink className={styles.bread} href="/">
-                Home
+              <BreadcrumbLink href="#">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem>
+              <BreadcrumbLink className={styles.bread} href="#">
+                Buy Token
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink
-                className={styles.bread}
-                href="https://zerogic.github.io/swap/https://zerogic.github.io/swap/"
-              >
+              <BreadcrumbLink className={styles.bread} href="#">
                 Swap
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink className={styles.bread} href="/farming">
-                Farms
+              <BreadcrumbLink className={styles.bread} href="#">
+                Contact us
               </BreadcrumbLink>
             </BreadcrumbItem>
+
             <BreadcrumbItem>
-              <BreadcrumbLink className={styles.bread} href="/">
-                Vault
+              <BreadcrumbLink className={styles.bread} href="#">
+                About us
               </BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
@@ -195,13 +160,10 @@ export default function Home() {
       {/* NAV */}
       <div className={styles.card}>
         <div className={styles.header}>
-          <div>
-            <h1 className={styles.ts}>Vaults</h1>
-            <h6>Just Stake Some Tokens To Earn,High APR, Low Risk.</h6>
-          </div>
-          <div className={styles.gambardua}>
-            <img src="/wew.png" width={200} className={styles.down} />
-          </div>
+          <h1 className={styles.ts}>Vaults</h1>
+          <h6>
+            Just Stake Some Tokens and Lp Tokens To Earn,High APY, Low Risk.
+          </h6>
         </div>
       </div>
       {/* MENU */}
@@ -260,12 +222,10 @@ export default function Home() {
                     textAlign="left"
                   >
                     <div className={styles.boxx}>
-                      <img src="/zgcs.png" width={45} />
-                      <h3 className={styles.padian}>
-                        Earn Idrt <span className={styles.padi}>Stake Zgc</span>
-                      </h3>
+                      <img src="/zgcs.png" width={30} />
+                      <h5 className={styles.pad}>Stake Zgc Earn Idrt</h5>
                     </div>
-                    <h4>APR 3.5%</h4>
+                    <h5>APY 3%</h5>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -390,20 +350,26 @@ export default function Home() {
                 </div>
                 <div className={styles.bung}>
                   <div className={styles.foot}>
-                    <h3>APR:</h3>
-                    <h3>3.56%</h3>
+                    <h4>APR:</h4>
+                    <h4>3.56%</h4>
                   </div>
-                  <div className={styles.foot}></div>
+                  <div className={styles.foot}>
+                    <h4>Reward</h4>
+                    <h4>500.000 Idrt</h4>
+                  </div>
                   <div className={styles.foot}>
                     <h4>Ends in:</h4>
                     <div className={styles.ass}>
                       <a className={styles.ap} href="">
                         Finished
                       </a>
-                      <a className={styles.ap} href="">
+                      <a className={styles.ap} href="https://rupiahtoken.com/">
                         View Project
                       </a>
-                      <a className={styles.ap} href="">
+                      <a
+                        className={styles.ap}
+                        href="https://polygonscan.com/address/0x8e85dd7816369fea2a3722f2e88e30a3473a711e"
+                      >
                         View Contract
                       </a>
                     </div>
@@ -411,22 +377,17 @@ export default function Home() {
                 </div>
               </AccordionPanel>
             </AccordionItem>
-
+            <Navbar />
             <Idrc />
           </Accordion>
         </div>
       </div>
       {/* staking */}
 
-      <Footer />
-      <div className={styles.copyy}>
-        <p class="copyright">
-          &copy; 2023 Zerogic All Rights Reserved by
-          <a href="#" className={styles.copyright}>
-            Zerogic
-          </a>
-        </p>
+      <div className={styles.gambar}>
+        <img src="/wew.png" width={200} className={styles.down} />
       </div>
+      <Footer />
     </div>
   );
 }
