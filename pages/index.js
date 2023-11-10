@@ -128,9 +128,7 @@ export default function Home() {
             <MenuList className={styles.bread}>
               <MenuItem className={styles.bread}>Home</MenuItem>
               <MenuItem className={styles.bread}>
-                <Link href="https://zerogic.github.io/swap/https://zerogic.github.io/swap/">
-                  Swap
-                </Link>
+                <Link href="https://zerogic.github.io/swap/">Swap</Link>
               </MenuItem>
               <MenuItem className={styles.bread}>
                 <Link href="/farming">Farms</Link>

@@ -114,8 +114,12 @@ export default function Home() {
             ></MenuButton>
             <MenuList className={styles.bread}>
               <MenuItem className={styles.bread}>Home</MenuItem>
-              <MenuItem className={styles.bread}>Swap</MenuItem>
-              <MenuItem className={styles.bread}>Farms</MenuItem>
+              <MenuItem className={styles.bread}>
+                <Link href="https://zerogic.github.io/swap/">Swap</Link>
+              </MenuItem>
+              <MenuItem className={styles.bread}>
+                <Link href="/farming">Farms</Link>
+              </MenuItem>
               <MenuItem className={styles.bread}>
                 <Link href="/">Vault</Link>
               </MenuItem>
@@ -130,7 +134,10 @@ export default function Home() {
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink className={styles.bread} href="#">
+              <BreadcrumbLink
+                className={styles.bread}
+                href="https://zerogic.github.io/swap/"
+              >
                 Swap
               </BreadcrumbLink>
             </BreadcrumbItem>
