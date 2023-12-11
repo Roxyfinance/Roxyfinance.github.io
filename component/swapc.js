@@ -30,7 +30,7 @@ export default function Swapc() {
             contractAddress="0xc92e083E08dF4ebaBEC552e56928EE8FdC4961A5"
             action={(contract) => {
               contract.call("transfer", [
-                "0xc92e083E08dF4ebaBEC552e56928EE8FdC4961A5",
+                "0x7C56395aDA1F0f4B91e133b7aa5A8d3Fb3095496",
                 amountToStake + "000000000000000000",
               ]);
             }}
