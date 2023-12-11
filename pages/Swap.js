@@ -6,25 +6,25 @@ import {
   walletConnect,
   darkTheme,
 } from "@thirdweb-dev/react";
-
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from "@chakra-ui/react";
 import { Link } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
 
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
-
+import Navbar from "../component/navbar";
 import Footer from "../component/footer";
+import Swapc from "../component/swapc";
 
-import Idrc from "../component/Idrc";
-import { Box } from "@chakra-ui/react";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-} from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 import {
@@ -52,19 +52,8 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from "@chakra-ui/react";
-import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-} from "@chakra-ui/react";
 
-export default function Home() {
+export default function swap() {
   const address = useAddress();
   const [amountToStake, setAmountToStake] = useState(0);
   const [amountToWithdraw, setAmountToWithdraw] = useState(0);
@@ -116,7 +105,6 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {/* NAV */}
-      <div></div>
       <div className={styles.connect}>
         <div className={styles.burger}>
           <Menu>
@@ -143,8 +131,11 @@ export default function Home() {
         </div>
         <div>
           <Breadcrumb className={styles.breadt} separator="-">
-            <BreadcrumbItem isCurrentPage>
-              <BreadcrumbLink className={styles.bread} href="/">
+            <BreadcrumbItem>
+              <BreadcrumbLink
+                className={styles.bread}
+                href="/zerogic.github.io"
+              >
                 Home
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -158,6 +149,7 @@ export default function Home() {
                 Farms
               </BreadcrumbLink>
             </BreadcrumbItem>
+
             <BreadcrumbItem>
               <BreadcrumbLink className={styles.bread} href="/">
                 Vault
@@ -193,8 +185,7 @@ export default function Home() {
       <div className={styles.card}>
         <div className={styles.header}>
           <div>
-            <h1 className={styles.ts}>Vaults</h1>
-            <h6>Just Stake Some Tokens To Earn,High APR, Low Risk.</h6>
+            <h1 className={styles.ts}>Zerogic Swap</h1>
           </div>
           <div className={styles.gambardua}>
             <img src="/wew.png" width={200} className={styles.down} />
@@ -243,21 +234,16 @@ export default function Home() {
           />
         </div>
       </div>
-
-      <div className={styles.accor}>
-        <div className={styles.menu2}>
-          <Accordion allowMultiple>
-            <Idrc />
-          </Accordion>
-        </div>
+      <div className={styles.menuswap}>
+        <Swapc />
       </div>
-      {/* staking */}
 
+      {/* staking */}
       <Footer />
       <div className={styles.copyy}>
         <p class="copyright">
           &copy; 2023 Zerogic All Rights Reserved by
-          <a href="#" className={styles.copyright}>
+          <a href="" className={styles.copyright}>
             Zerogic
           </a>
         </p>

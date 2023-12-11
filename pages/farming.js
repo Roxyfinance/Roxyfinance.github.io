@@ -52,7 +52,7 @@ import {
   BreadcrumbSeparator,
 } from "@chakra-ui/react";
 
-export default function Home() {
+export default function farming() {
   const address = useAddress();
   const [amountToStake, setAmountToStake] = useState(0);
   const [amountToWithdraw, setAmountToWithdraw] = useState(0);
@@ -113,9 +113,12 @@ export default function Home() {
               rightIcon={<HamburgerIcon />}
             ></MenuButton>
             <MenuList className={styles.bread}>
-              <MenuItem className={styles.bread}>Home</MenuItem>
               <MenuItem className={styles.bread}>
-                <Link href="https://zerogic.github.io/swap/">Swap</Link>
+                {" "}
+                <Link href="/zerogic.github.io">Home</Link>
+              </MenuItem>
+              <MenuItem className={styles.bread}>
+                <Link href="/Swap">Swap</Link>
               </MenuItem>
               <MenuItem className={styles.bread}>
                 <Link href="/farming">Farms</Link>
@@ -129,15 +132,15 @@ export default function Home() {
         <div>
           <Breadcrumb className={styles.breadt} separator="-">
             <BreadcrumbItem>
-              <BreadcrumbLink className={styles.bread} href="/">
+              <BreadcrumbLink
+                className={styles.bread}
+                href="/zerogic.github.io"
+              >
                 Home
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink
-                className={styles.bread}
-                href="https://zerogic.github.io/swap/"
-              >
+              <BreadcrumbLink className={styles.bread} href="/Swap">
                 Swap
               </BreadcrumbLink>
             </BreadcrumbItem>

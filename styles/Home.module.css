@@ -557,3 +557,17 @@
 .copyright {
   color: red;
 }
+
+.bungkuss {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+.wee {
+  margin-top: 30px;
+}
+.gape {
+  gap: 50px;
+}
