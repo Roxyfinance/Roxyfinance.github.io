@@ -565,7 +565,9 @@
   justify-content: center;
   margin-top: 100px;
 }
-
+.wee {
+  margin-top: 80px;
+}
 .gape {
   gap: 50px;
 }
