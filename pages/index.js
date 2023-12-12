@@ -127,7 +127,7 @@ export default function Home() {
             ></MenuButton>
             <MenuList className={styles.bread}>
               <MenuItem className={styles.bread}>
-                <Link href="/zerogic.github.io">Home</Link>
+                <Link href="/https://zerogic.github.io/">Home</Link>
               </MenuItem>
               <MenuItem className={styles.bread}>
                 <Link href="/Swap">Swap</Link>
@@ -144,7 +144,10 @@ export default function Home() {
         <div>
           <Breadcrumb className={styles.breadt} separator="-">
             <BreadcrumbItem isCurrentPage>
-              <BreadcrumbLink className={styles.bread} href="/">
+              <BreadcrumbLink
+                className={styles.bread}
+                href="/https://zerogic.github.io/"
+              >
                 Home
               </BreadcrumbLink>
             </BreadcrumbItem>

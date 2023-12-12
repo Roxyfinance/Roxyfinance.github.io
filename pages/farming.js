@@ -115,7 +115,7 @@ export default function farming() {
             <MenuList className={styles.bread}>
               <MenuItem className={styles.bread}>
                 {" "}
-                <Link href="/zerogic.github.io">Home</Link>
+                <Link href="/https://zerogic.github.io/">Home</Link>
               </MenuItem>
               <MenuItem className={styles.bread}>
                 <Link href="/Swap">Swap</Link>
@@ -134,7 +134,7 @@ export default function farming() {
             <BreadcrumbItem>
               <BreadcrumbLink
                 className={styles.bread}
-                href="/zerogic.github.io"
+                href="/https://zerogic.github.io/"
               >
                 Home
               </BreadcrumbLink>

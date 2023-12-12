@@ -5,6 +5,7 @@ export default function footer() {
       <div className={styles.faconItems}>
         <img className={styles.putar} src="/zgc.png" width={70} />
         <h1>Zerogic</h1>
+        <h3 className={styles.price}>$1.42</h3>
       </div>
       <div className={styles.faconItem}>
         <h3>Product</h3>

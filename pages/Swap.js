@@ -17,11 +17,9 @@ import {
   MenuDivider,
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/react";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
-
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
-import Navbar from "../component/navbar";
+import Buy from "../component/buy";
 import Footer from "../component/footer";
 import Swapc from "../component/swapc";
 
@@ -115,7 +113,7 @@ export default function swap() {
             ></MenuButton>
             <MenuList className={styles.bread}>
               <MenuItem className={styles.bread}>
-                <Link href="/zerogic.github.io">Home</Link>
+                <Link href="/https://zerogic.github.io/">Home</Link>
               </MenuItem>
               <MenuItem className={styles.bread}>
                 <Link href="/Swap">Swap</Link>
@@ -134,7 +132,7 @@ export default function swap() {
             <BreadcrumbItem>
               <BreadcrumbLink
                 className={styles.bread}
-                href="/zerogic.github.io"
+                href="/https://zerogic.github.io/"
               >
                 Home
               </BreadcrumbLink>
@@ -234,9 +232,9 @@ export default function swap() {
           />
         </div>
       </div>
-      <div className={styles.menuswap}>
-        <Swapc />
-      </div>
+
+      <Swapc />
+      <Buy />
 
       {/* staking */}
       <Footer />
