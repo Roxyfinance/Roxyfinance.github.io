@@ -21,7 +21,7 @@ import {
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
-import { stakingContractAddressLp } from "../const/idrc";
+import { stakingContractAddressLp } from "../const/DAI";
 import {
   Accordion,
   AccordionItem,
@@ -30,7 +30,7 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 
-export default function Idrc() {
+export default function DAI() {
   const address = useAddress();
   const [amountToStake, setAmountToStake] = useState(0);
   const [amountToWithdraw, setAmountToWithdraw] = useState(0);
@@ -85,12 +85,12 @@ export default function Idrc() {
         <AccordionButton className={styles.menu}>
           <Box className={styles.box} as="span" flex="1" textAlign="left">
             <div className={styles.boxx}>
-              <img src="/idrc.png" width={45} />
+              <img src="/Dai.png" width={45} />
               <h3 className={styles.padian}>
-                Earn Idrc <span className={styles.padi}>Stake Zgc</span>
+                Earn Dai <span className={styles.padi}>Stake Zgc</span>
               </h3>
             </div>
-            <h4>APR 6%</h4>
+            <h4>APR 12%</h4>
           </Box>
           <AccordionIcon />
         </AccordionButton>
@@ -98,7 +98,7 @@ export default function Idrc() {
       <AccordionPanel pb={4}>
         <div className={styles.now}>
           <h4>
-            <span className={styles.ap}>Idrc</span> Earned
+            <span className={styles.ap}>Dai</span> Earned
           </h4>
           <div className={styles.reward}>
             <h4 className={styles.now}>
@@ -146,7 +146,7 @@ export default function Idrc() {
 
                     <ModalBody p={10}>
                       <div className={styles.judul}>
-                        <p>IdrcBalance:</p>
+                        <p>Dai Balance:</p>
                         <p>{rewardTokenBalance?.displayValue}</p>
                       </div>
                       <div className={styles.judul}>
@@ -209,7 +209,7 @@ export default function Idrc() {
         <div className={styles.bung}>
           <div className={styles.foot}>
             <h4>APR:</h4>
-            <h4>6%</h4>
+            <h4>12%</h4>
           </div>
           <div className={styles.foot}></div>
           <div className={styles.foot}>

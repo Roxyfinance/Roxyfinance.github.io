@@ -6,15 +6,12 @@ import {
   walletConnect,
   darkTheme,
 } from "@thirdweb-dev/react";
-
 import { Link } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
-
 import Footer from "../component/footer";
-
 import Idrc from "../component/Idrc";
+import DAI from "../component/DAI";
 import { Box } from "@chakra-ui/react";
 import {
   Modal,
@@ -66,9 +63,6 @@ import {
 
 export default function Home() {
   const address = useAddress();
-  const [amountToStake, setAmountToStake] = useState(0);
-  const [amountToWithdraw, setAmountToWithdraw] = useState(0);
-
   // Initialize all the contracts
   const { contract: staking, isLoading: isStakingLoading } = useContract(
     stakingContractAddress,
@@ -127,7 +121,7 @@ export default function Home() {
             ></MenuButton>
             <MenuList className={styles.bread}>
               <MenuItem className={styles.bread}>
-                <Link href="/https://zerogic.github.io/">Home</Link>
+                <Link href="/">Home</Link>
               </MenuItem>
               <MenuItem className={styles.bread}>
                 <Link href="/Swap">Swap</Link>
@@ -136,7 +130,7 @@ export default function Home() {
                 <Link href="/farming">Farms</Link>
               </MenuItem>
               <MenuItem className={styles.bread}>
-                <Link href="/">Vault</Link>
+                <Link href="/vault">Vault</Link>
               </MenuItem>
             </MenuList>
           </Menu>
@@ -144,10 +138,7 @@ export default function Home() {
         <div>
           <Breadcrumb className={styles.breadt} separator="-">
             <BreadcrumbItem isCurrentPage>
-              <BreadcrumbLink
-                className={styles.bread}
-                href="/https://zerogic.github.io/"
-              >
+              <BreadcrumbLink className={styles.bread} href="/">
                 Home
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -162,7 +153,7 @@ export default function Home() {
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink className={styles.bread} href="/">
+              <BreadcrumbLink className={styles.bread} href="/vault">
                 Vault
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -251,6 +242,7 @@ export default function Home() {
         <div className={styles.menu2}>
           <Accordion allowMultiple>
             <Idrc />
+            <DAI />
           </Accordion>
         </div>
       </div>

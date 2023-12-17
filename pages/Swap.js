@@ -113,7 +113,7 @@ export default function swap() {
             ></MenuButton>
             <MenuList className={styles.bread}>
               <MenuItem className={styles.bread}>
-                <Link href="/https://zerogic.github.io/">Home</Link>
+                <Link href="/">Home</Link>
               </MenuItem>
               <MenuItem className={styles.bread}>
                 <Link href="/Swap">Swap</Link>
@@ -122,7 +122,7 @@ export default function swap() {
                 <Link href="/farming">Farms</Link>
               </MenuItem>
               <MenuItem className={styles.bread}>
-                <Link href="/">Vault</Link>
+                <Link href="/vault">Vault</Link>
               </MenuItem>
             </MenuList>
           </Menu>
@@ -130,10 +130,7 @@ export default function swap() {
         <div>
           <Breadcrumb className={styles.breadt} separator="-">
             <BreadcrumbItem>
-              <BreadcrumbLink
-                className={styles.bread}
-                href="/https://zerogic.github.io/"
-              >
+              <BreadcrumbLink className={styles.bread} href="/">
                 Home
               </BreadcrumbLink>
             </BreadcrumbItem>
