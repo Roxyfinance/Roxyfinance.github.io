@@ -242,6 +242,7 @@ export default function Home() {
         <div className={styles.menu2}>
           <Accordion allowMultiple>
             <Idrc />
+            <DAI />
           </Accordion>
         </div>
       </div>
