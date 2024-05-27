@@ -4,15 +4,15 @@ export default function footer() {
     <div className={styles.focon}>
       <div className={styles.faconItems}>
         <img className={styles.putar} src="/zgc.png" width={70} />
-        <h1>Zerogic</h1>
-        <h3 className={styles.price}>$1.0</h3>
+        <h1>Roxy</h1>
+        <h3 className={styles.price}>$1.5</h3>
       </div>
       <div className={styles.faconItem}>
         <h3>Product</h3>
-        <p>Eternal</p>
-        <p>Rupiah-C</p>
-        <p>Zerogic</p>
-        <p>Midnight Sun</p>
+        <p>Aromatica Parfume</p>
+        <p>Psycoterhapy</p>
+        <p>Psycaltherapy</p>
+        <p>Reflexology</p>
       </div>
 
       <div className={styles.faconItem}>

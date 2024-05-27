@@ -187,7 +187,7 @@ export default function Home() {
       <div className={styles.card}>
         <div className={styles.header}>
           <div>
-            <h1 className={styles.ts}>Vaults</h1>
+            <h1 className={styles.ts}>Pools</h1>
             <h6>Just Stake Some Tokens To Earn,High APR, Low Risk.</h6>
           </div>
           <div className={styles.gambardua}>
@@ -242,7 +242,6 @@ export default function Home() {
         <div className={styles.menu2}>
           <Accordion allowMultiple>
             <Idrc />
-            <DAI />
           </Accordion>
         </div>
       </div>
@@ -251,9 +250,9 @@ export default function Home() {
       <Footer />
       <div className={styles.copyy}>
         <p class="copyright">
-          &copy; 2023 Zerogic All Rights Reserved by
+          &copy; 2023 Roxy All Rights Reserved by
           <a href="#" className={styles.copyright}>
-            Zerogic
+            Roxy
           </a>
         </p>
       </div>
