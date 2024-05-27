@@ -209,7 +209,7 @@ export default function DAI() {
         <div className={styles.bung}>
           <div className={styles.foot}>
             <h4>APR:</h4>
-            <h4>12%</h4>
+            <h4>6.56%</h4>
           </div>
           <div className={styles.foot}></div>
           <div className={styles.foot}>

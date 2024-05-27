@@ -3,7 +3,7 @@ export default function footer() {
   return (
     <div className={styles.focon}>
       <div className={styles.faconItems}>
-        <img className={styles.putar} src="/zgc.png" width={70} />
+        <img className={styles.putar} src="/zgc.png" width={80} />
         <h1>Roxy</h1>
         <h3 className={styles.price}>$1.5</h3>
       </div>

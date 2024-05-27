@@ -146,7 +146,7 @@ export default function Home() {
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink className={styles.bread} href="/vault">
+              <BreadcrumbLink className={styles.bread} href="/">
                 Pools
               </BreadcrumbLink>
             </BreadcrumbItem>
