@@ -124,13 +124,10 @@ export default function Home() {
                 <Link href="/">Home</Link>
               </MenuItem>
               <MenuItem className={styles.bread}>
-                <Link href="/Swap">Swap</Link>
-              </MenuItem>
-              <MenuItem className={styles.bread}>
                 <Link href="/farming">Farms</Link>
               </MenuItem>
               <MenuItem className={styles.bread}>
-                <Link href="/vault">Vault</Link>
+                <Link href="/">Pools</Link>
               </MenuItem>
             </MenuList>
           </Menu>
@@ -142,11 +139,7 @@ export default function Home() {
                 Home
               </BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbItem>
-              <BreadcrumbLink className={styles.bread} href="/Swap">
-                Swap
-              </BreadcrumbLink>
-            </BreadcrumbItem>
+            <BreadcrumbItem></BreadcrumbItem>
             <BreadcrumbItem>
               <BreadcrumbLink className={styles.bread} href="/farming">
                 Farms
@@ -154,7 +147,7 @@ export default function Home() {
             </BreadcrumbItem>
             <BreadcrumbItem>
               <BreadcrumbLink className={styles.bread} href="/vault">
-                Vault
+                Pools
               </BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>

@@ -115,16 +115,13 @@ export default function farming() {
             <MenuList className={styles.bread}>
               <MenuItem className={styles.bread}>
                 {" "}
-                <Link href="/https://zerogic.github.io/">Home</Link>
-              </MenuItem>
-              <MenuItem className={styles.bread}>
-                <Link href="/Swap">Swap</Link>
+                <Link href="/">Home</Link>
               </MenuItem>
               <MenuItem className={styles.bread}>
                 <Link href="/farming">Farms</Link>
               </MenuItem>
               <MenuItem className={styles.bread}>
-                <Link href="/">Vault</Link>
+                <Link href="/">Pools</Link>
               </MenuItem>
             </MenuList>
           </Menu>
@@ -132,18 +129,11 @@ export default function farming() {
         <div>
           <Breadcrumb className={styles.breadt} separator="-">
             <BreadcrumbItem>
-              <BreadcrumbLink
-                className={styles.bread}
-                href="/https://zerogic.github.io/"
-              >
+              <BreadcrumbLink className={styles.bread} href="/">
                 Home
               </BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbItem>
-              <BreadcrumbLink className={styles.bread} href="/Swap">
-                Swap
-              </BreadcrumbLink>
-            </BreadcrumbItem>
+            <BreadcrumbItem></BreadcrumbItem>
             <BreadcrumbItem>
               <BreadcrumbLink className={styles.bread} href="/farming">
                 Farms
@@ -152,7 +142,7 @@ export default function farming() {
 
             <BreadcrumbItem>
               <BreadcrumbLink className={styles.bread} href="/">
-                Vault
+                Pools
               </BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
@@ -246,9 +236,9 @@ export default function farming() {
       <Footer />
       <div className={styles.copyy}>
         <p class="copyright">
-          &copy; 2023 Zerogic All Rights Reserved by
+          &copy; 2023 Roxy All Rights Reserved by
           <a href="" className={styles.copyright}>
-            Zerogic
+            Roxy
           </a>
         </p>
       </div>

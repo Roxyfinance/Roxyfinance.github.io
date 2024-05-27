@@ -87,10 +87,10 @@ export default function DAI() {
             <div className={styles.boxx}>
               <img src="/Dai.png" width={45} />
               <h3 className={styles.padian}>
-                Earn Dai <span className={styles.padi}>Stake Zgc</span>
+                Earn Plax <span className={styles.padi}>Stake Rpay</span>
               </h3>
             </div>
-            <h4>APR 12%</h4>
+            <h4>APR 6.56%</h4>
           </Box>
           <AccordionIcon />
         </AccordionButton>
@@ -98,7 +98,7 @@ export default function DAI() {
       <AccordionPanel pb={4}>
         <div className={styles.now}>
           <h4>
-            <span className={styles.ap}>Dai</span> Earned
+            <span className={styles.ap}>Plax</span> Earned
           </h4>
           <div className={styles.reward}>
             <h4 className={styles.now}>
@@ -120,7 +120,7 @@ export default function DAI() {
         <div className={styles.now}>
           <div>
             <h4>
-              <span className={styles.ap}>Zgc</span> Staked
+              <span className={styles.ap}>Rpay</span> Staked
             </h4>
           </div>
           <div className={styles.reward}>
@@ -146,11 +146,11 @@ export default function DAI() {
 
                     <ModalBody p={10}>
                       <div className={styles.judul}>
-                        <p>Dai Balance:</p>
+                        <p>Plax Balance:</p>
                         <p>{rewardTokenBalance?.displayValue}</p>
                       </div>
                       <div className={styles.judul}>
-                        <p>Zgc Balance:</p>
+                        <p>Rpay Balance:</p>
                         <p>{stakingTokenBalance?.displayValue}</p>
                       </div>
                     </ModalBody>
@@ -219,7 +219,7 @@ export default function DAI() {
                 Finished
               </a>
               <a className={styles.ap} href="">
-                Get Zgc Token
+                Get Rpay Token
               </a>
               <a className={styles.ap} href="/farming">
                 View Contract

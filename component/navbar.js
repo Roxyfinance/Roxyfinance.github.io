@@ -88,8 +88,8 @@ export default function navbar() {
               <img src="/lps.png" width={45} />
 
               <h3 className={styles.padian}>
-                Earn Idrc{" "}
-                <span className={styles.padi}>Stake Zgc-Matic Lp</span>
+                Earn Rpay{" "}
+                <span className={styles.padi}>Stake Rpay-Usdt Lp</span>
               </h3>
             </div>
             <h4>APR 3.5%</h4>
@@ -100,7 +100,7 @@ export default function navbar() {
       <AccordionPanel pb={4}>
         <div className={styles.now}>
           <h4>
-            <span className={styles.ap}>Idrc</span> Earned
+            <span className={styles.ap}>Rpay</span> Earned
           </h4>
           <div className={styles.reward}>
             <h4 className={styles.now}>
@@ -122,7 +122,7 @@ export default function navbar() {
         <div className={styles.now}>
           <div>
             <h4>
-              <span className={styles.ap}>Zgc</span> Staked
+              <span className={styles.ap}>Rpay</span> Staked
             </h4>
           </div>
           <div className={styles.reward}>
@@ -149,11 +149,11 @@ export default function navbar() {
 
                     <ModalBody p={10}>
                       <div className={styles.judul}>
-                        <p>IdrcBalance:</p>
+                        <p>Rpay Balance:</p>
                         <p>{rewardTokenBalance?.displayValue}</p>
                       </div>
                       <div className={styles.judul}>
-                        <p>Zgc Balance:</p>
+                        <p>Lp Balance:</p>
                         <p>{stakingTokenBalance?.displayValue}</p>
                       </div>
                     </ModalBody>

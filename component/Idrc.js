@@ -87,7 +87,7 @@ export default function Idrc() {
             <div className={styles.boxx}>
               <img src="/idrc.png" width={45} />
               <h3 className={styles.padian}>
-                Earn Idrc <span className={styles.padi}>Stake Zgc</span>
+                Earn Paw <span className={styles.padi}>Stake Rpay</span>
               </h3>
             </div>
             <h4>APR 6%</h4>
@@ -98,7 +98,7 @@ export default function Idrc() {
       <AccordionPanel pb={4}>
         <div className={styles.now}>
           <h4>
-            <span className={styles.ap}>Idrc</span> Earned
+            <span className={styles.ap}>Paw</span> Earned
           </h4>
           <div className={styles.reward}>
             <h4 className={styles.now}>
@@ -120,7 +120,7 @@ export default function Idrc() {
         <div className={styles.now}>
           <div>
             <h4>
-              <span className={styles.ap}>Zgc</span> Staked
+              <span className={styles.ap}>Rpay</span> Staked
             </h4>
           </div>
           <div className={styles.reward}>
@@ -146,11 +146,11 @@ export default function Idrc() {
 
                     <ModalBody p={10}>
                       <div className={styles.judul}>
-                        <p>IdrcBalance:</p>
+                        <p>Paw Balance:</p>
                         <p>{rewardTokenBalance?.displayValue}</p>
                       </div>
                       <div className={styles.judul}>
-                        <p>Zgc Balance:</p>
+                        <p>Rpay Balance:</p>
                         <p>{stakingTokenBalance?.displayValue}</p>
                       </div>
                     </ModalBody>
@@ -219,7 +219,7 @@ export default function Idrc() {
                 Finished
               </a>
               <a className={styles.ap} href="">
-                Get Zgc Token
+                Get Rpay Token
               </a>
               <a className={styles.ap} href="/farming">
                 View Contract
