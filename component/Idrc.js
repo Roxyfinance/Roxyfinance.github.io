@@ -90,7 +90,7 @@ export default function Idrc() {
                 Earn Paw <span className={styles.padi}>Stake Rpay</span>
               </h3>
             </div>
-            <h4>APR 6%</h4>
+            <h4>APR 23%</h4>
           </Box>
           <AccordionIcon />
         </AccordionButton>
@@ -209,20 +209,29 @@ export default function Idrc() {
         <div className={styles.bung}>
           <div className={styles.foot}>
             <h4>APR:</h4>
-            <h4>6%</h4>
+            <h4>23%</h4>
           </div>
           <div className={styles.foot}></div>
           <div className={styles.foot}>
             <h4>Ends in:</h4>
             <div className={styles.ass}>
               <a className={styles.ap} href="">
-                Finished
+                10 May 2025
               </a>
-              <a className={styles.ap} href="">
+              <a
+                className={styles.ap}
+                href="https://plaxswap.io/swap?outputCurrency=0x231388046892C0eE3fCC6f3fF68cEa612dB5005C&inputCurrency=0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+              >
                 Get Rpay Token
               </a>
-              <a className={styles.ap} href="/farming">
+              <a
+                className={styles.ap}
+                href="https://polygonscan.com/address/0x5F6e089548A72463F5FA50D7fB1E2730Ac1339B7"
+              >
                 View Contract
+              </a>
+              <a className={styles.ap} href="https://polycat.finance">
+                View Project
               </a>
             </div>
           </div>

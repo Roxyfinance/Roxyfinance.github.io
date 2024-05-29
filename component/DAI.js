@@ -216,13 +216,22 @@ export default function DAI() {
             <h4>Ends in:</h4>
             <div className={styles.ass}>
               <a className={styles.ap} href="">
-                Finished
+                20 December 2024
               </a>
-              <a className={styles.ap} href="">
+              <a
+                className={styles.ap}
+                href="https://plaxswap.io/swap?outputCurrency=0x231388046892C0eE3fCC6f3fF68cEa612dB5005C&inputCurrency=0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+              >
                 Get Rpay Token
               </a>
-              <a className={styles.ap} href="/farming">
+              <a
+                className={styles.ap}
+                href="https://polygonscan.com/address/0x6d45ae5372ae61cd0271eb67bcb43b7ab162d4ab"
+              >
                 View Contract
+              </a>
+              <a className={styles.ap} href="https://plaxswap.io/">
+                View Project
               </a>
             </div>
           </div>
