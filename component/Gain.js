@@ -21,7 +21,7 @@ import {
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
-import { stakingContractAddressLp } from "../const/Lpcontract";
+import { stakingContractAddressLp } from "../const/Gain";
 import {
   Accordion,
   AccordionItem,
@@ -30,7 +30,7 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 
-export default function navbar() {
+export default function Gain() {
   const address = useAddress();
   const [amountToStake, setAmountToStake] = useState(0);
   const [amountToWithdraw, setAmountToWithdraw] = useState(0);
@@ -85,14 +85,12 @@ export default function navbar() {
         <AccordionButton className={styles.menu}>
           <Box className={styles.box} as="span" flex="1" textAlign="left">
             <div className={styles.boxx}>
-              <img src="/usdt.png" width={45} />
-
+              <img src="/dai2.png" width={35} />
               <h3 className={styles.padian}>
-                Earn Rpay{" "}
-                <span className={styles.padi}>Stake Rpay-Usdt Lp</span>
+                Earn Dai <span className={styles.padi}>Stake Rpay</span>
               </h3>
             </div>
-            <h4>APR 3.5%</h4>
+            <h4>APR 2.56%</h4>
           </Box>
           <AccordionIcon />
         </AccordionButton>
@@ -100,7 +98,7 @@ export default function navbar() {
       <AccordionPanel pb={4}>
         <div className={styles.now}>
           <h4>
-            <span className={styles.ap}>Rpay</span> Earned
+            <span className={styles.ap}>Dai</span> Earned
           </h4>
           <div className={styles.reward}>
             <h4 className={styles.now}>
@@ -134,7 +132,6 @@ export default function navbar() {
                 <Button className={styles.button} onClick={onOpen}>
                   Stake
                 </Button>
-
                 <Modal
                   className={styles.up}
                   closeOnOverlayClick={false}
@@ -149,11 +146,11 @@ export default function navbar() {
 
                     <ModalBody p={10}>
                       <div className={styles.judul}>
-                        <p>Rpay Balance:</p>
+                        <p>Dai Balance:</p>
                         <p>{rewardTokenBalance?.displayValue}</p>
                       </div>
                       <div className={styles.judul}>
-                        <p>Lp Balance:</p>
+                        <p>Rpay Balance:</p>
                         <p>{stakingTokenBalance?.displayValue}</p>
                       </div>
                     </ModalBody>
@@ -212,26 +209,29 @@ export default function navbar() {
         <div className={styles.bung}>
           <div className={styles.foot}>
             <h4>APR:</h4>
-            <h4>3.5%</h4>
+            <h4>2.56%</h4>
           </div>
           <div className={styles.foot}></div>
           <div className={styles.foot}>
             <h4>Ends in:</h4>
             <div className={styles.ass}>
               <a className={styles.ap} href="">
-                20 may 2025
+                20 December 2024
               </a>
               <a
                 className={styles.ap}
-                href="https://plaxswap.io/add/MATIC/0x231388046892C0eE3fCC6f3fF68cEa612dB5005C"
+                href="https://plaxswap.io/swap?outputCurrency=0x231388046892C0eE3fCC6f3fF68cEa612dB5005C&inputCurrency=0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
               >
-                Get Lp Token
+                Get Rpay Token
               </a>
               <a
                 className={styles.ap}
-                href="https://polygonscan.com/address/0x039A3020f7A9C1944734c01B195C7E74A17208Cb#writeContract"
+                href="https://polygonscan.com/address/0x5D1e5cf340eBd89c7A926492392F478E656b5805"
               >
                 View Contract
+              </a>
+              <a className={styles.ap} href="https://makerdao.com/">
+                View Project
               </a>
             </div>
           </div>

@@ -12,6 +12,8 @@ import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import Footer from "../component/footer";
 import Idrc from "../component/Idrc";
 import DAI from "../component/DAI";
+import Gain from "../component/Gain";
+import Wmatic from "../component/wmatic";
 import { Box } from "@chakra-ui/react";
 import {
   Modal,
@@ -236,6 +238,8 @@ export default function Home() {
           <Accordion allowMultiple>
             <Idrc />
             <DAI />
+            <Gain />
+            <Wmatic />
           </Accordion>
         </div>
       </div>

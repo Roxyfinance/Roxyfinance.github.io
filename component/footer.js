@@ -3,7 +3,7 @@ export default function footer() {
   return (
     <div className={styles.focon}>
       <div className={styles.faconItems}>
-        <img className={styles.putar} src="/zgc.png" width={60} />
+        <img className={styles.putar} src="/zgc.png" width={70} />
         <h1>Roxy</h1>
         <h3 className={styles.price}>$1.5</h3>
       </div>
@@ -18,7 +18,7 @@ export default function footer() {
       <div className={styles.faconItem}>
         <h3>Service</h3>
         <p>Add liquidity</p>
-        <p>Vaults</p>
+        <p>Pools</p>
         <p>Farms</p>
         <p>Swap</p>
       </div>
