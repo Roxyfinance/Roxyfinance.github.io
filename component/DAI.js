@@ -47,6 +47,7 @@ export default function DAI() {
     staking,
     "stakingToken"
   );
+  const url = "https://roxyfi.xyz/";
 
   // Initialize token contracts
   const { contract: stakingToken, isLoading: isStakingTokenLoading } =
