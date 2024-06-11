@@ -80,7 +80,7 @@ export default function navbar() {
   };
 
   return (
-    <AccordionItem>
+    <AccordionItem clientId={process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID}>
       <h2>
         <AccordionButton className={styles.menu}>
           <Box className={styles.box} as="span" flex="1" textAlign="left">
@@ -122,7 +122,7 @@ export default function navbar() {
         <div className={styles.now}>
           <div>
             <h4>
-              <span className={styles.ap}>Rpay</span> Staked
+              <span className={styles.ap}>Lp</span> Staked
             </h4>
           </div>
           <div className={styles.reward}>

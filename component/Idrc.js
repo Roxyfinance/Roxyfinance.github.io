@@ -106,6 +106,7 @@ export default function Idrc() {
             </h4>
             <div className={styles.but}>
               <Web3Button
+                clientId={process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID}
                 contractAddress={stakingContractAddressLp}
                 action={async (contract) => {
                   await contract.call("claimRewards", []);
