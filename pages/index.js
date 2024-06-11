@@ -70,7 +70,6 @@ export default function Home() {
     stakingContractAddress,
     "custom"
   );
-  const url = "https://roxyfi.xyz/";
   const { isOpen, onOpen, onClose } = useDisclosure();
   // Get contract data from staking contract
   const { data: rewardTokenAddress } = useContractRead(staking, "rewardToken");
